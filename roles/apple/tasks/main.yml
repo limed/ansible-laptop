@@ -1,0 +1,8 @@
+# Set up Apple cusomizatons
+---
+
+  - name: Show hidden files in Finder
+    command: defaults write com.apple.finder AppleShowAllFiles TRUE
+
+  - name: Restart Finder
+    command: killall Finder
