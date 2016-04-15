@@ -1,0 +1,17 @@
+---
+- name: 'Setup .vim directory'
+  file:
+    path: "{{ homedirectory }}/.vim/{{ item }}"
+    owner: "{{ username }}"
+    group: staff
+    mode: '0644'
+    state: directory
+  with_items:
+    - autoload
+    - bundle
+
+- name: 'Install pathogen'
+  get_url:
+    url: 'https://tpo.pe/pathogen.vim'
+    dest: "{{ homedirectory }}/.vim/autoload/pathogen.vim"
+    mode: '0644'
