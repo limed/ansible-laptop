@@ -1,0 +1,16 @@
+---
+username: 'limed'
+homedirectory: "/Users/{{ username }}"
+
+homebrew_packages:
+  - 'coreutils'
+  - 'bash-completion'
+  - 'git'
+  - 'pwgen'
+  - 'keychain'
+  - 'curl'
+  - 'pinentry'
+  - 'hub'
+  - 'gist'
+  - 'jq'
+
