@@ -1,21 +1,3 @@
 ---
 username: 'limed'
 homedirectory: "/Users/{{ username }}"
-
-homebrew_packages:
-  - 'coreutils'
-  - 'bash-completion'
-  - 'git'
-  - 'pwgen'
-  - 'keychain'
-  - 'curl'
-  - 'pinentry'
-  - 'hub'
-  - 'gist'
-  - 'jq'
-  - 'terraform'
-  - 'awscli'
-  - 'ansible'
-  - 'git'
-  - 'git-crypt'
-

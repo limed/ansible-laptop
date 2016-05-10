@@ -1,0 +1,21 @@
+---
+homebrew_taps:
+  - 'homebrew/versions'
+  - 'homebrew/completions'
+
+homebrew_packages:
+  - 'coreutils'
+  - 'bash-completion'
+  - 'git'
+  - 'pwgen'
+  - 'keychain'
+  - 'curl'
+  - 'pinentry'
+  - 'hub'
+  - 'gist'
+  - 'jq'
+  - 'terraform'
+  - 'awscli'
+  - 'ansible'
+  - 'git'
+  - 'git-crypt'
