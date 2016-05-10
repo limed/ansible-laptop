@@ -13,4 +13,9 @@ homebrew_packages:
   - 'hub'
   - 'gist'
   - 'jq'
+  - 'terraform'
+  - 'awscli'
+  - 'ansible'
+  - 'git'
+  - 'git-crypt'
 
