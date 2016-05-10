@@ -1,0 +1,7 @@
+# Bash profile
+
+if [[ -f "${HOME}/.bashrc" ]]; then
+    . ~/.bashrc
+fi
+
+# vim:ft=sh
