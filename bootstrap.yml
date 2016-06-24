@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  connection: local
+  vars_files:
+    - './vars/common.yml'
+
+  roles:
+    - role: 'homebrew'
+    - role: 'common'
