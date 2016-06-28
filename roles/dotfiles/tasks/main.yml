@@ -5,3 +5,15 @@
     owner: "{{ username }}"
     mode: '0755'
     state: directory
+
+- name: Copy mailcap file
+  copy:
+    src: dotfiles/mailcap
+    dest: "{{ lookup('env', 'HOME') }}/.mailcap"
+    mode: '0644'
+
+- name: Copy urlview file
+  copy:
+    src: dotfiles/urlview
+    dest: "{{ lookup('env', 'HOME') }}/.urlview"
+    mode: '0644'

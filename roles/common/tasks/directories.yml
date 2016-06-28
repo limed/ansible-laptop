@@ -3,7 +3,6 @@
   file:
     path: "{{ lookup('env', 'HOME') }}/git"
     owner: "{{ username }}"
-    group: staff
     mode: '0755'
     state: directory
 
@@ -11,6 +10,14 @@
   file:
     path: "{{ lookup('env', 'HOME') }}/docker"
     owner: "{{ username }}"
-    group: staff
     mode: '0755'
     state: directory
+
+#- name: Create /docker  volume directory
+# become: true
+# become_method: sudo
+# file:
+#   path: /docker
+#   owner: "{{ lookup('env', 'USER') }}"
+#   mode: '0755'
+#   state: directory
