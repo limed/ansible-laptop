@@ -24,7 +24,6 @@
     dest: "{{ homedirectory }}/.vimrc"
     owner: "{{ username }}"
     mode: '0644'
-    state: file
 
 - name: 'Install vim-go syntax file'
   git:
