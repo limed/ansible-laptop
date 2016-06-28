@@ -1,20 +1,7 @@
 ---
-- name: Check if dotfile directory exists
-  stat:
-    path: "{{ lookup('env', 'HOME') }}/git/dotfiles/.git"
-  register: dotfile_git
-
-- name: Clone dotfile directories
-  command: "git clone {{ private_git_repo }}/dotfiles.git"
-  when: dotfile_git.isdir == False
-
 - name: Create bash.d directory
   file:
     path: "{{ lookup('env', 'HOME') }}/.bash.d"
     owner: "{{ username }}"
-    group: staff
-    mode: '0755'
-    state: directory    owner: "{{ username }}"
-    group: staff
     mode: '0755'
     state: directory
