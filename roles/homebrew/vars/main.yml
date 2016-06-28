@@ -5,6 +5,7 @@ homebrew_taps:
 
 homebrew_packages:
   - 'coreutils'
+  - 'bash'
   - 'bash-completion'
   - 'pwgen'
   - 'keychain'
@@ -23,3 +24,8 @@ homebrew_packages:
   - 'ipcalc'
   - 'packer'
   - 'mtr'
+  - 'sqlite'
+  - 'unrar'
+  - 'urlview'
+  - 'ssh-copy-id'
+  - 'go'
