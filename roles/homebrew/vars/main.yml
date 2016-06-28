@@ -19,3 +19,4 @@ homebrew_packages:
   - 'ansible'
   - 'git'
   - 'git-crypt'
+  - 'gpg-agent'
