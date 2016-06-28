@@ -49,3 +49,13 @@
   git:
     repo: 'https://github.com/ekalinin/Dockerfile.vim.git'
     dest: "{{ homedirectory }}/.vim/bundle/Dockerfile"
+
+- name: 'Install vim-puppet'
+  git:
+    repo: 'https://github.com/rodjek/vim-puppet.git'
+    dest: "{{ lookup('env', 'HOME') }}/.vim/bundle/vim-puppet"
+
+- name: 'Install tabular'
+  git:
+    repo: "https://github.com/godlygeek/tabular"
+    dest: "{{ lookup('env', 'HOME') }}/.vim/bundle/tabular"
