@@ -6,8 +6,11 @@ set -eu
 echo "Installing homebrew"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+echo "Installing ansible"
+brew install ansible
+
 echo "Create ~/git directory"
 mkdir ~/git
 
 echo "Cloning ansible playbook into ~/git directory"
-git clone git@github.com:limed/ansible-laptop.git ~/git/ansible-laptop
+git clone https://github.com/limed/ansible-laptop.git ~/git/ansible-laptop
