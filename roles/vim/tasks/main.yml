@@ -30,3 +30,9 @@
   git:
     repo: 'https://github.com/fatih/vim-go.git'
     dest: "{{ homedirectory }}/.vim/bundle/vim-go"
+
+- name: 'Install vim-ansible-yaml'
+  git:
+    repo: 'https://github.com/chase/vim-ansible-yaml.git
+    dest: "{{ homedirectory }}.vim/bundle/vim-ansible-yaml"
+
