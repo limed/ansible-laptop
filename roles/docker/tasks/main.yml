@@ -1,0 +1,11 @@
+---
+- name: Install docker package via homebrew
+  homebrew:
+    name: docker
+    state: present
+
+- name: Create docker folder
+  file:
+    path: "{{ lookup('env', 'HOME') }}/docker"
+    mode: '0755'
+    state: directory

@@ -1,0 +1,10 @@
+---
+- name: Install gpg
+  homebrew:
+    name: gnupg
+    state: present
+
+- name: Install gpg-agent
+  homebrew:
+    name: gpg-agent
+    state: present
