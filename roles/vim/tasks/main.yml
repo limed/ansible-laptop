@@ -33,4 +33,19 @@
 - name: 'Install vim-ansible-yaml'
   git:
     repo: 'https://github.com/chase/vim-ansible-yaml.git'
-    dest: "{{ homedirectory }}.vim/bundle/vim-ansible-yaml"
+    dest: "{{ homedirectory }}/.vim/bundle/vim-ansible-yaml"
+
+- name: 'Install vim-json'
+  git:
+    repo: 'https://github.com/elzr/vim-json.git'
+    dest: "{{ homedirectory }}/.vim/bundle/vim-json"
+
+- name: 'Install vim-terraform'
+  git:
+    repo: 'https://github.com/markcornick/vim-terraform.git'
+    dest: "{{ homedirectory }}/.vim/bundle/vim-terraform"
+
+- name: 'Install vim-dockerfile'
+  git:
+    repo: 'https://github.com/ekalinin/Dockerfile.vim.git'
+    dest: "{{ homedirectory }}/.vim/bundle/Dockerfile"
