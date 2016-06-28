@@ -1,5 +1,7 @@
 ---
 - name: 'Setup .vim directory'
+  become: true
+  become_method: sudo
   file:
     path: "{{ homedirectory }}/.vim/{{ item }}"
     owner: "{{ username }}"
