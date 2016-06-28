@@ -3,7 +3,7 @@
   become: true
   become_method: sudo
   file:
-    path: "{{ homedirectory }}/.vim/{{ item }}"
+    path: "{{ lookup('env', 'HOME') }}/.vim/{{ item }}"
     owner: "{{ username }}"
     group: staff
     mode: '0755'
