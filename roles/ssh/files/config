@@ -1,0 +1,28 @@
+UseRoaming no
+
+Host *
+HashKnownHosts no
+ForwardAgent yes
+
+Host svn.mozilla.org
+User elim@mozilla.com
+
+Host hg.mozilla.org
+User elim@mozilla.com
+
+Host *mozilla.com
+User elim
+
+Host *mozilla.net
+User elim
+
+Host *mozilla.org
+User elim
+
+Host *nubis.allizom.org
+User ec2-user
+
+Host ldap-tunnel
+    HostName ldapmaster1.db.scl3.mozilla.com
+    LocalForward 9090 127.0.0.1:389
+    User elim

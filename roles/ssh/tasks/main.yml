@@ -1,0 +1,6 @@
+---
+- name: Setup user ssh config
+  copy:
+    src: config
+    dest: "{{ lookup('env', 'HOME') }}/.ssh/config"
+    mode: '0644'

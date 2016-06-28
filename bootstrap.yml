@@ -9,6 +9,7 @@
     - role: 'common'
     - role: 'vim'
     - role: 'gpg'
+    - role: 'ssh'
     - role: 'docker'
     - role: 'git'
       git_user: limed
