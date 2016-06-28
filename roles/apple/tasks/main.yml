@@ -4,6 +4,4 @@
   #    command: defaults write com.apple.finder AppleShowAllFiles TRUE
 - name: Disable ds_store for remote shares
   command: defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
-
-- name: Restart Finder
-  command: killall Finder
+  notify: Restart Finder
