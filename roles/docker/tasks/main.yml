@@ -9,3 +9,8 @@
     path: "{{ lookup('env', 'HOME') }}/docker"
     mode: '0755'
     state: directory
+
+- name: Install docker-completion
+  homebrew:
+    name: docker-completion
+    state: present

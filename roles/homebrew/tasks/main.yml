@@ -9,3 +9,8 @@
     name: "{{ item }}"
     state: present
   with_items: "{{ homebrew_packages }}"
+
+- name: Enable homebrew/completions tap
+  homebrew_tap:
+    tap: homebrew/completions
+    state: present
