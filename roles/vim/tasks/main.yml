@@ -15,3 +15,16 @@
     url: 'https://tpo.pe/pathogen.vim'
     dest: "{{ homedirectory }}/.vim/autoload/pathogen.vim"
     mode: '0644'
+
+- name: 'Install vimrc'
+  file:
+    src: 'vimrc'
+    dest: "{{ homedirectory }}/.vimrc"
+    owner: "{{ username }}"
+    mode: '0644'
+    state: file
+
+- name: 'Install vim-go syntax file'
+  git:
+    repo: 'https://github.com/fatih/vim-go.git'
+    dest: "{{ homedirectory }}/.vim/bundle/vim-go"
