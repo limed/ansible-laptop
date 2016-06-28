@@ -1,0 +1,15 @@
+# File managed by ansible
+
+# Images
+image/jpeg; ~/.mutt/bin/view_attachment %s
+image/pjpeg; ~/.mutt/bin/view_attachment %s
+image/png; ~/.mutt/bin/view_attachment %s
+image/gif; ~/.mutt/bin/view_attachment %s
+
+# PDF
+application/pdf; ~/.mutt/bin/view_attachment %s pdf
+
+# HTML
+# -- always use lynx; it's gay to use safari for this
+#text/html; elinks -force-html %s
+text/html; w3m -I %{charset} -T text/html; copiousoutput;
