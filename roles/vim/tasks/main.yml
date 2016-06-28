@@ -19,7 +19,7 @@
     mode: '0644'
 
 - name: 'Install vimrc'
-  file:
+  copy:
     src: 'vimrc'
     dest: "{{ homedirectory }}/.vimrc"
     owner: "{{ username }}"
