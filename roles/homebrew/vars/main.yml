@@ -6,7 +6,6 @@ homebrew_taps:
 homebrew_packages:
   - 'coreutils'
   - 'bash-completion'
-  - 'git'
   - 'pwgen'
   - 'keychain'
   - 'curl'
@@ -17,8 +16,6 @@ homebrew_packages:
   - 'terraform'
   - 'awscli'
   - 'ansible'
-  - 'git'
-  - 'git-crypt'
   - 'dos2unix'
   - 'watch'
   - 'subversion'

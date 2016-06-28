@@ -1,0 +1,16 @@
+---
+- name: Install git
+  homebrew:
+    name: git
+    state: present
+
+- name: Install git-crypt
+  homebrew:
+    name: git-crypt
+    state: present
+
+- name: 'Copy gitconfig'
+  template:
+    src: gitconfig.j2
+    dest: "{{ lookup('env', 'HOME') }}/.gitconfig"
+    mode: '0644'

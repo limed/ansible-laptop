@@ -8,3 +8,10 @@
     - role: 'homebrew'
     - role: 'common'
     - role: 'vim'
+    - role: 'gpg'
+    - role: 'docker'
+    - role: 'git'
+      git_user: limed
+      git_email: limed@mozilla.com
+      github_username: limed
+      github_name: Ed Lim
