@@ -9,5 +9,7 @@
   homebrew_tap:
     tap: "{{ item }}"
     state: present
-    notify: Update homebrew
+  notify: Update homebrew
   with_items: "{{ homebrew_taps }}"
+
+- meta: flush_handlers
