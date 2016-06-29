@@ -29,3 +29,4 @@ homebrew_packages:
   - 'urlview'
   - 'ssh-copy-id'
   - 'go'
+  - 'htop'
