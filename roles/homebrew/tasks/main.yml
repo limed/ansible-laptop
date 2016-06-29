@@ -1,9 +1,4 @@
 ---
-- name: Update and Upgrade all
-  homebrew:
-    update_homebrew: yes
-    upgrade_all: yes
-
 - name: Install packages
   homebrew:
     name: "{{ item }}"
@@ -12,5 +7,7 @@
 
 - name: Enable homebrew/completions tap
   homebrew_tap:
-    tap: homebrew/completions
+    tap: "{{ item }}"
     state: present
+    notify: Update homebrew
+  with_items: "{{ homebrew_taps }}"
