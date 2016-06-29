@@ -1,12 +1,12 @@
 ---
-- gem_packages:
-    - 'puppet'
-    - 'puppet-lint'
-    - 'facter'
-    - 'puppet_forge'
-    - 'github_changelog_generator'
+gem_packages:
+  - 'puppet'
+  - 'puppet-lint'
+  - 'facter'
+  - 'puppet_forge'
+  - 'github_changelog_generator'
 
-- pip_packages:
-    - 'boto'
-    - 'boto3'
-    - 'jmespath'
+pip_packages:
+  - 'boto'
+  - 'boto3'
+  - 'jmespath'
