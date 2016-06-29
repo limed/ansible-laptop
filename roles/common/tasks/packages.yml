@@ -6,8 +6,8 @@
     name: pip
 
 - name: Install common gem packages
-  become: true
-  become_method: sudo
+  #become: true
+  #become_method: sudo
   gem:
     name: "{{ item }}"
     state: latest

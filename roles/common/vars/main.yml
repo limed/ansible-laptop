@@ -6,8 +6,9 @@ gem_packages:
   - 'puppet_forge'
   - 'librarian-puppet'
   - 'github_changelog_generator'
+  - 'livestreamer'
 
 pip_packages:
   - 'boto'
-  - 'boto3'
+  #- 'boto3'
   - 'jmespath'
