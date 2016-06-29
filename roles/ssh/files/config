@@ -1,28 +1,35 @@
 UseRoaming no
+ControlPath ~/.ssh/controlmasters/%r@%h:%p
+ControlPersist 1h
 
 Host *
-HashKnownHosts no
-ForwardAgent yes
+    HashKnownHosts no
+    ForwardAgent yes
 
 Host svn.mozilla.org
-User elim@mozilla.com
+    User elim@mozilla.com
 
 Host hg.mozilla.org
-User elim@mozilla.com
+    User elim@mozilla.com
 
 Host *mozilla.com
-User elim
+    User elim
 
 Host *mozilla.net
-User elim
+    User elim
 
 Host *mozilla.org
-User elim
+    User elim
+
+Host gads1.private.scl3.mozilla.com
+    User elim
+    ForwardX11 yes
 
 Host *nubis.allizom.org
-User ec2-user
+    User ec2-user
 
 Host ldap-tunnel
     HostName ldapmaster1.db.scl3.mozilla.com
     LocalForward 9090 127.0.0.1:389
+    ControlMaster auto
     User elim

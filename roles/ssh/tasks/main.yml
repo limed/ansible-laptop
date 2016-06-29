@@ -1,4 +1,14 @@
 ---
+- name: Create .ssh and .ssh/controlmasters folder
+  file:
+    path: "{{ item }}"
+    owner: "{{ lookup('env', 'USER') }}"
+    mode: '0700'
+    state: directory
+  with_items:
+    - "{{ lookup('env', 'HOME') }}/.ssh"
+    - "{{ lookup('env', 'HOME') }}/.ssh/controlmasters"
+
 - name: Setup user ssh config
   copy:
     src: config
