@@ -4,6 +4,7 @@ gem_packages:
   - 'puppet-lint'
   - 'facter'
   - 'puppet_forge'
+  - 'librarian-puppet'
   - 'github_changelog_generator'
 
 pip_packages:
