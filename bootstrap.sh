@@ -9,8 +9,8 @@ echo "Installing homebrew"
 echo "Installing ansible"
 brew install ansible
 
-echo "Create ~/git directory"
-mkdir ~/git
+echo "Create ~/scm directory"
+mkdir ~/scm
 
 echo "Cloning ansible playbook into ~/git directory"
-git clone https://github.com/limed/ansible-laptop.git ~/git/ansible-laptop
+git clone https://github.com/limed/ansible-laptop.git ~/scm/ansible-laptop
