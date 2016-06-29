@@ -10,7 +10,7 @@
     mode: '0755'
     state: directory
 
-- name: Install docker-completion
-  homebrew:
-    name: docker-completion
-    state: present
+#- name: Install docker-completion
+  #homebrew:
+  #name: docker-completion
+  #state: present
