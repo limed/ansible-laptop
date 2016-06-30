@@ -30,3 +30,4 @@ homebrew_packages:
   - 'ssh-copy-id'
   - 'go'
   - 'htop'
+  - 'wget'
