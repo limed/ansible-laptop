@@ -11,10 +11,15 @@
     - role: common
       tags: common
     - role: 'vim'
+      tags: vim
     - role: 'gpg'
+      tags: gpg
     - role: 'ssh'
+      tags: ssh
     - role: 'docker'
+      tags: docker
     - role: 'git'
+      tags: git
       git_user: limed
       git_email: limed@mozilla.com
       github_username: limed
