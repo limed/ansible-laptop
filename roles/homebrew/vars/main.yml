@@ -4,30 +4,30 @@ homebrew_taps:
   - 'homebrew/completions'
 
 homebrew_packages:
-  - 'coreutils'
-  - 'bash'
-  - 'bash-completion'
-  - 'pwgen'
-  - 'keychain'
-  - 'curl'
-  - 'pinentry'
-  - 'hub'
-  - 'gist'
-  - 'jq'
-  - 'terraform'
-  - 'awscli'
-  - 'ansible'
-  - 'dos2unix'
-  - 'watch'
-  - 'subversion'
-  - 'swaks'
-  - 'ipcalc'
-  - 'packer'
-  - 'mtr'
-  - 'sqlite'
-  - 'unrar'
-  - 'urlview'
-  - 'ssh-copy-id'
-  - 'go'
-  - 'htop'
-  - 'wget'
+  - { name: 'coreutils' }
+  - { name: 'bash' }
+  - { name: 'bash-completion' }
+  - { name: 'pwgen' }
+  - { name: 'keychain' }
+  - { name: 'curl' }
+  - { name: 'pinentry' }
+  - { name: 'hub' }
+  - { name: 'gist' }
+  - { name: 'jq' }
+  - { name: 'terraform' }
+  - { name: 'awscli' }
+  - { name: 'ansible' }
+  - { name: 'dos2unix' }
+  - { name: 'watch' }
+  - { name: 'subversion' }
+  - { name: 'swaks' }
+  - { name: 'ipcalc' }
+  - { name: 'packer' }
+  - { name: 'mtr' }
+  - { name: 'sqlite' }
+  - { name: 'unrar' }
+  - { name: 'urlview' }
+  - { name: 'ssh-copy-id' }
+  - { name: 'go' }
+  - { name: 'htop' }
+  - { name: 'wget' }

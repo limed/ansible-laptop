@@ -1,15 +1,23 @@
 ---
+- name: Update and Upgrade all
+  homebrew:
+    update_homebrew: yes
+    upgrade_all: yes
+  tags:
+    - update
+
 - name: Install packages
   homebrew:
-    name: "{{ item }}"
-    state: present
+    name: "{{ item.name }}"
+    state: latest
+    install_options: "{{ item.install_options|default() }}"
   with_items: "{{ homebrew_packages }}"
 
 - name: Enable homebrew/completions tap
   homebrew_tap:
     tap: "{{ item }}"
     state: present
-  notify: Update homebrew
+    notify: Update homebrew
   with_items: "{{ homebrew_taps }}"
 
 - meta: flush_handlers
