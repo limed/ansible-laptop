@@ -1,12 +1,15 @@
 ---
 - hosts: localhost
   connection: local
+  gather_facts: false
   vars_files:
     - './vars/common.yml'
 
   roles:
-    - role: 'homebrew'
-    - role: 'common'
+    - role: homebrew
+      tags: homebrew
+    - role: common
+      tags: common
     - role: 'vim'
     - role: 'gpg'
     - role: 'ssh'
