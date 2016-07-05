@@ -12,40 +12,40 @@
 - name: 'Install pathogen'
   get_url:
     url: 'https://tpo.pe/pathogen.vim'
-    dest: "{{ homedirectory }}/.vim/autoload/pathogen.vim"
+    dest: "{{ lookup('env', 'HOME') }}/.vim/autoload/pathogen.vim"
     mode: '0644'
 
 - name: 'Install vimrc'
   copy:
     src: 'vimrc'
-    dest: "{{ homedirectory }}/.vimrc"
-    owner: "{{ username }}"
+    dest: "{{ lookup('env', 'HOME') }}/.vimrc"
+    owner: "{{ lookup('env', 'USER') }}"
     mode: '0644'
 
 - name: 'Install vim-go syntax file'
   git:
     repo: 'https://github.com/fatih/vim-go.git'
-    dest: "{{ homedirectory }}/.vim/bundle/vim-go"
+    dest: "{{ lookup('env', 'HOME') }}/.vim/bundle/vim-go"
 
 - name: 'Install vim-ansible-yaml'
   git:
     repo: 'https://github.com/chase/vim-ansible-yaml.git'
-    dest: "{{ homedirectory }}/.vim/bundle/vim-ansible-yaml"
+    dest: "{{ lookup('env', 'HOME') }}/.vim/bundle/vim-ansible-yaml"
 
 - name: 'Install vim-json'
   git:
     repo: 'https://github.com/elzr/vim-json.git'
-    dest: "{{ homedirectory }}/.vim/bundle/vim-json"
+    dest: "{{ lookup('env', 'HOME') }}/.vim/bundle/vim-json"
 
 - name: 'Install vim-terraform'
   git:
     repo: 'https://github.com/markcornick/vim-terraform.git'
-    dest: "{{ homedirectory }}/.vim/bundle/vim-terraform"
+    dest: "{{ lookup('env', 'HOME') }}/.vim/bundle/vim-terraform"
 
 - name: 'Install vim-dockerfile'
   git:
     repo: 'https://github.com/ekalinin/Dockerfile.vim.git'
-    dest: "{{ homedirectory }}/.vim/bundle/Dockerfile"
+    dest: "{{ lookup('env', 'HOME') }}/.vim/bundle/Dockerfile"
 
 - name: 'Install vim-puppet'
   git:

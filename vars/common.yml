@@ -1,4 +1,3 @@
 ---
 username: 'limed'
-homedirectory: "/Users/{{ username }}"
 private_git_repo: "ssh://gitolite3@git.sudoers.us"
