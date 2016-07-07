@@ -31,3 +31,5 @@ homebrew_packages:
   - { name: 'go' }
   - { name: 'htop' }
   - { name: 'wget' }
+  - { name: lastpass-cli, install_options: "with-pinentry,with-doc" }
+  - { name: livestreamer }
