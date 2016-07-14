@@ -17,13 +17,21 @@ Host hg.mozilla.org
     User elim@mozilla.com
 
 Host ssh.mozilla.com
-    ControlMaster auto
     User elim
+    ControlMaster auto
 
 Host *.mozilla.com
     User elim
     ForwardAgent no
     ProxyCommand ssh -W %h:%p -oProxyCommand=none ssh.mozilla.com
+
+Host ldap-tunnel
+    User elim
+    ForwardAgent yes
+    ControlMaster auto
+    HostName ldapmaster1.db.scl3.mozilla.com
+    ProxyCommand ssh -W %h:%p -oProxyCommand=none ssh.mozilla.com
+    LocalForward 9090 127.0.0.1:389
 
 Host gads1.private.scl3.mozilla.com
     User elim
@@ -31,9 +39,3 @@ Host gads1.private.scl3.mozilla.com
 
 Host *nubis.allizom.org
     User ec2-user
-
-Host ldap-tunnel
-    HostName ldapmaster1.db.scl3.mozilla.com
-    LocalForward 9090 127.0.0.1:389
-    ControlMaster auto
-    User elim
