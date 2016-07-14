@@ -13,6 +13,13 @@
     mode: '0755'
     state: directory
 
+- name: Create ~/go directory
+  file:
+    path: "{{ lookup('env', 'HOME') }}/go"
+    owner: "{{ lookup('env', 'USER') }}"
+    mode: 0755
+    state: directory
+
 #- name: Create /docker  volume directory
 # become: true
 # become_method: sudo
