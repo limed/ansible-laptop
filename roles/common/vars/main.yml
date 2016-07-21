@@ -12,3 +12,4 @@ pip_packages:
   #- 'boto3'
   - 'jmespath'
   #- 'livestreamer'
+  - 'PyYAML'
