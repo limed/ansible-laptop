@@ -10,7 +10,7 @@
   #become_method: sudo
   gem:
     name: "{{ item }}"
-    state: latest
+    state: present
   with_items:
     - "{{ gem_packages }}"
 
