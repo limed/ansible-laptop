@@ -8,8 +8,8 @@ gem_packages:
   - 'github_changelog_generator'
 
 pip_packages:
-  - 'boto'
-  - 'jmespath'
+  - { name: 'boto' }
+  - { name: 'jmespath' }
   #- 'livestreamer'
-  - 'PyYAML'
-  - 'python-ldap'
+  - { name: 'PyYAML' }
+  - { name: 'python-ldap' }

@@ -9,7 +9,8 @@
   #become: true
   #become_method: sudo
   gem:
-    name: "{{ item }}"
+    name: "{{ item.name }}"
+    user_install: "{{ item.user_install | default () }}"
     state: present
   with_items:
     - "{{ gem_packages }}"
@@ -18,7 +19,8 @@
   become: true
   become_method: sudo
   pip:
-    name: "{{ item }}"
+    name: "{{ item.name }}"
+    extra_args: "{{ item.extra_args | default() }}"
     state: present
   with_items:
     - "{{ pip_packages }}"
