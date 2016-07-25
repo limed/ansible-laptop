@@ -1,15 +1,15 @@
 ---
 gem_packages:
-  - 'puppet'
-  - 'puppet-lint'
-  - 'facter'
-  - 'puppet_forge'
-  - 'librarian-puppet'
-  - 'github_changelog_generator'
+  - { name: 'puppet', user_install: 'false' }
+  - { name: 'puppet-lint', user_install: 'false' }
+  - { name: 'facter', user_install: 'false' }
+  - { name: 'puppet_forge', user_install: 'false' }
+  - { name: 'librarian-puppet', user_install: 'false' }
+  - { name: 'github_changelog_generator', user_install: 'false' }
 
 pip_packages:
   - { name: 'boto' }
   - { name: 'jmespath' }
-  #- 'livestreamer'
   - { name: 'PyYAML' }
-  - { name: 'python-ldap' }
+  #- { name: 'python-ldap', extra_args: '--global-option=build_ext --global-option=\"-I$(xcrun --show-sdk-path)/usr/include/sasl\"' }
+  #- 'livestreamer'
