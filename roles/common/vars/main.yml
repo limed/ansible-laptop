@@ -1,11 +1,11 @@
 ---
 gem_packages:
-  - { name: 'puppet', user_install: 'false' }
-  - { name: 'puppet-lint', user_install: 'false' }
-  - { name: 'facter', user_install: 'false' }
-  - { name: 'puppet_forge', user_install: 'false' }
-  - { name: 'librarian-puppet', user_install: 'false' }
-  - { name: 'github_changelog_generator', user_install: 'false' }
+  - { name: 'puppet', user_install: 'no' }
+  - { name: 'puppet-lint', user_install: 'no' }
+  - { name: 'facter', user_install: 'no' }
+  - { name: 'puppet_forge', user_install: 'no' }
+  - { name: 'librarian-puppet', user_install: 'no' }
+  - { name: 'github_changelog_generator', user_install: 'no' }
 
 pip_packages:
   - { name: 'boto' }
