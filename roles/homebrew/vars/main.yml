@@ -34,3 +34,4 @@ homebrew_packages:
   - { name: 'lastpass-cli', install_options: "with-pinentry,with-doc" }
   - { name: 'livestreamer' }
   - { name: 'ffmpeg' }
+  - { name: 'shellcheck' }
