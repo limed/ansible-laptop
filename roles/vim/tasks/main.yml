@@ -29,8 +29,8 @@
 
 - name: 'Install vim-ansible-yaml'
   git:
-    repo: 'https://github.com/chase/vim-ansible-yaml.git'
-    dest: "{{ lookup('env', 'HOME') }}/.vim/bundle/vim-ansible-yaml"
+    repo: 'https://github.com/pearofducks/ansible-vim.git'
+    dest: "{{ lookup('env', 'HOME') }}/.vim/bundle/ansible-vim"
 
 - name: 'Install vim-json'
   git:
