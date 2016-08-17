@@ -8,3 +8,8 @@
   homebrew:
     name: gpg-agent
     state: present
+
+- name: Install gnupg2
+  homebrew:
+    name: gnupg2
+    state: present
