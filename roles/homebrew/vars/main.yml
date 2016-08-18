@@ -36,3 +36,5 @@ homebrew_packages:
   - { name: 'ffmpeg' }
   - { name: 'shellcheck' }
   - { name: 'pianobar' }
+  - { name: 'offlineimap' }
+  - { name: 'mutt' }
