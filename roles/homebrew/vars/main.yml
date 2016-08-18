@@ -35,3 +35,4 @@ homebrew_packages:
   - { name: 'livestreamer' }
   - { name: 'ffmpeg' }
   - { name: 'shellcheck' }
+  - { name: 'pianobar' }
