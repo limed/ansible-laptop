@@ -1,0 +1,8 @@
+---
+node_packages:
+  - { name: 'node' }
+  - { name: 'npm' }
+
+npm_packages:
+  - { name: 'aws-lambda-local', global: 'yes' }
+

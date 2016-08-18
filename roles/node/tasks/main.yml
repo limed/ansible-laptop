@@ -1,0 +1,14 @@
+---
+- name: 'Installs nodejs and npm'
+  homebrew:
+    name: '{{ item.name }}'
+    state: 'present'
+  with_items: '{{ node_packages }}'
+
+- name: 'Installs npm packages'
+  npm:
+    name: '{{ item.name }}'
+    state: 'present'
+    global: '{{ item.global|default() }}'
+  with_items: '{{ npm_packages }}'
+

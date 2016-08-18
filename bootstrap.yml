@@ -18,6 +18,8 @@
       tags: ssh
     - role: 'docker'
       tags: docker
+    - role: 'node'
+      tags: node
     - role: 'git'
       tags: git
       git_user: limed
