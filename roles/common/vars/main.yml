@@ -11,5 +11,6 @@ pip_packages:
   - { name: 'boto' }
   - { name: 'jmespath' }
   - { name: 'PyYAML' }
+  - { name: 'credstash' }
+  - { name: 'livestreamer' }
   #- { name: 'python-ldap', extra_args: "--global-option=build_ext --global-option=\"-I$(xcrun --show-sdk-path)/usr/include/sasl\"" }
-  #- { name: 'livestreamer' }
