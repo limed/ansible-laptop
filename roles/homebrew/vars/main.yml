@@ -3,6 +3,7 @@ homebrew_taps:
   - 'homebrew/versions'
   - 'homebrew/completions'
   - 'versent/homebrew-taps'
+  - 'caskroom/cask'
 
 homebrew_packages:
   - { name: 'coreutils' }
@@ -43,3 +44,6 @@ homebrew_packages:
   - { name: 'mutt' }
   - { name: 'sshuttle' }
   - { name: 'unicreds' }
+
+homebrew_cask_packages:
+  - { name: 'aws-vault' }
