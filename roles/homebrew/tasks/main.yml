@@ -6,12 +6,12 @@
   tags:
     - update
 
-- name: Install packages
-  homebrew:
-    name: "{{ item.name }}"
-    state: latest
-    install_options: "{{ item.install_options|default() }}"
-  with_items: "{{ homebrew_packages }}"
+- name: Enable homebrew taps
+  homebrew_tap:
+    tap: "{{ item }}"
+    state: present
+  notify: Update homebrew
+  with_items: "{{ homebrew_taps }}"
 
 - name: Install cask packages
   homebrew_cask:
@@ -21,11 +21,11 @@
     #update_homebrew: yes
   with_items: "{{ homebrew_cask_packages }}"
 
-- name: Enable homebrew taps
-  homebrew_tap:
-    tap: "{{ item }}"
-    state: present
-  notify: Update homebrew
-  with_items: "{{ homebrew_taps }}"
+- name: Install packages
+  homebrew:
+    name: "{{ item.name }}"
+    state: latest
+    install_options: "{{ item.install_options|default() }}"
+  with_items: "{{ homebrew_packages }}"
 
 - meta: flush_handlers
