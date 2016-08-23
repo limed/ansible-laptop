@@ -7,6 +7,7 @@ homebrew_packages:
   - { name: 'coreutils' }
   - { name: 'bash' }
   - { name: 'bash-completion' }
+  - { name: 'python' }
   - { name: 'pwgen' }
   - { name: 'keychain' }
   - { name: 'curl' }
@@ -35,6 +36,8 @@ homebrew_packages:
   - { name: 'livestreamer' }
   - { name: 'ffmpeg' }
   - { name: 'shellcheck' }
+  - { name: 'libao', install_options: '--HEAD' }
   - { name: 'pianobar' }
   - { name: 'offlineimap' }
   - { name: 'mutt' }
+  - { name: 'sshuttle' }
