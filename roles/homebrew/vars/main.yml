@@ -2,6 +2,7 @@
 homebrew_taps:
   - 'homebrew/versions'
   - 'homebrew/completions'
+  - 'versent/homebrew-taps'
 
 homebrew_packages:
   - { name: 'coreutils' }
@@ -41,3 +42,4 @@ homebrew_packages:
   - { name: 'offlineimap' }
   - { name: 'mutt' }
   - { name: 'sshuttle' }
+  - { name: 'unicreds' }
