@@ -48,3 +48,4 @@ homebrew_packages:
 
 homebrew_cask_packages:
   - { name: 'aws-vault' }
+  - { name: 'consul-cli' }
