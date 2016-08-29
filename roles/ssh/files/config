@@ -16,6 +16,9 @@ Host svn.mozilla.org
 Host hg.mozilla.org
     User elim@mozilla.com
 
+Host people.mozilla.org
+    User elim
+
 Host ssh.mozilla.com
     User elim
     ControlMaster auto
