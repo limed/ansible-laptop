@@ -5,4 +5,5 @@ node_packages:
 
 npm_packages:
   - { name: 'aws-lambda-local', global: 'yes' }
+  - { name: 'node-lambda', global: 'yes' }
 
