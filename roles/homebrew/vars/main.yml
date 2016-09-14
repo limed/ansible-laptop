@@ -45,6 +45,7 @@ homebrew_packages:
   - { name: 'sshuttle' }
   - { name: 'unicreds' }
   - { name: 'httpie' }
+  - { name: 'ghi' }
 
 homebrew_cask_packages:
   - { name: 'aws-vault' }
