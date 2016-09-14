@@ -6,6 +6,7 @@ gem_packages:
   - { name: 'puppet_forge', user_install: 'no' }
   - { name: 'librarian-puppet', user_install: 'no' }
   - { name: 'github_changelog_generator', user_install: 'no' }
+  - { name: 'pygments.rb', user_install: 'no' }
 
 pip_packages:
   - { name: 'boto' }
