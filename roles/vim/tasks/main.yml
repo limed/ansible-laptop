@@ -39,7 +39,7 @@
 
 - name: 'Install vim-terraform'
   git:
-    repo: 'https://github.com/markcornick/vim-terraform.git'
+    repo: 'https://github.com/hashivim/vim-terraform.git'
     dest: "{{ lookup('env', 'HOME') }}/.vim/bundle/vim-terraform"
 
 - name: 'Install vim-dockerfile'
