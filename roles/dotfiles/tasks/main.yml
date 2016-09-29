@@ -17,3 +17,9 @@
     src: dotfiles/urlview
     dest: "{{ lookup('env', 'HOME') }}/.urlview"
     mode: '0644'
+
+- name: Copy inputrc file
+  copy:
+    src: dotfiles/inputrc
+    dest: "{{ lookup('env', 'HOME') }}/.urlview"
+    mode: '0644'
