@@ -2,7 +2,7 @@
 # https://wiki.mozilla.org/Security/Guidelines/OpenSSH
 
 UseRoaming no
-ControlPath ~/.ssh/controlmasters/%r@%h:%p
+#ControlPath ~/.ssh/controlmasters/%r@%h:%p
 ControlPersist 1h
 HostKeyAlgorithms ssh-ed25519-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,ssh-ed25519,ssh-rsa,ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521,ecdsa-sha2-nistp384,ecdsa-sha2-nistp256
 
@@ -22,6 +22,7 @@ Host people.mozilla.org
 Host ssh.mozilla.com
     User elim
     ControlMaster auto
+    ControlPath ~/.ssh/controlmasters/%r@%h:%p
 
 Host *.mozilla.com
     User elim
@@ -31,6 +32,7 @@ Host *.mozilla.com
 Host ldap-tunnel
     User elim
     ForwardAgent no
+    ControlPath ~/.ssh/controlmasters/%r@%h:%p
     HostName ldapmaster1.db.scl3.mozilla.com
     ProxyCommand ssh -W %h:%p -oProxyCommand=none ssh.mozilla.com
     LocalForward 9090 127.0.0.1:389
@@ -41,3 +43,5 @@ Host gads1.private.scl3.mozilla.com
 
 Host *nubis.allizom.org
     User ec2-user
+    ControlPath none
+    ControlMaster no
