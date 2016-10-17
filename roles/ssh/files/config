@@ -29,10 +29,13 @@ Host *.mozilla.com
     ForwardAgent no
     ProxyCommand ssh -W %h:%p -oProxyCommand=none ssh.mozilla.com
 
+Host git-internal.mozilla.org
+    ProxyCommand ssh -W %h:%p -oProxyCommand=none ssh.mozilla.com
+
 Host ldap-tunnel
     User elim
     ForwardAgent no
-    ControlPath ~/.ssh/controlmasters/%r@%h:%p
+    #ControlPath ~/.ssh/controlmasters/%r@%h:%p
     HostName ldapmaster1.db.scl3.mozilla.com
     ProxyCommand ssh -W %h:%p -oProxyCommand=none ssh.mozilla.com
     LocalForward 9090 127.0.0.1:389
