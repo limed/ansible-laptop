@@ -14,4 +14,5 @@ pip_packages:
   - { name: 'PyYAML' }
   - { name: 'credstash' }
   - { name: 'livestreamer' }
+  - { name: 'docopts' }
   #- { name: 'python-ldap', extra_args: "--global-option=build_ext --global-option=\"-I$(xcrun --show-sdk-path)/usr/include/sasl\"" }
