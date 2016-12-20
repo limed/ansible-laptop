@@ -46,6 +46,9 @@ homebrew_packages:
   - { name: 'unicreds' }
   - { name: 'httpie' }
   - { name: 'ghi' }
+  - { name: 'rkhunter' }
+  - { name: 'qrencode' }
+  - { name: 'oath-toolkit' }
 
 homebrew_cask_packages:
   - { name: 'aws-vault' }
