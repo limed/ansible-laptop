@@ -54,4 +54,5 @@ homebrew_cask_packages:
   - { name: 'aws-vault' }
   - { name: 'consul-cli' }
   - { name: 'livestreamer-twitch-gui' }
+  - { name: 'streamlink-twitch-gui' }
   - { name: 'spotify' }
