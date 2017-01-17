@@ -18,4 +18,5 @@ pip_packages:
   - { name: 'streamlink' }
   - { name: 'pyspf' }
   - { name: 'pydns' }
+  - { name: 'Jinja2' }
   #- { name: 'python-ldap', extra_args: "--global-option=build_ext --global-option=\"-I$(xcrun --show-sdk-path)/usr/include/sasl\"" }
