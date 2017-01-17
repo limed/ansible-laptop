@@ -7,6 +7,7 @@ homebrew_taps:
 
 homebrew_packages:
   - { name: 'coreutils' }
+  - { name: 'findutils' }
   - { name: 'bash' }
   - { name: 'bash-completion' }
   - { name: 'python' }
