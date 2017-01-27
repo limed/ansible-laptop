@@ -20,6 +20,12 @@
     mode: 0755
     state: directory
 
+- name: Create ~/.aws/cli directory
+  file:
+    path: "{{ lookup('env', 'HOME')}}/.aws/cli"
+    owner: "{{ lookup('env', 'USER') }}"
+    state: directory
+
 #- name: Create /docker  volume directory
 # become: true
 # become_method: sudo
