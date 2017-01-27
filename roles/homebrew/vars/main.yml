@@ -4,6 +4,7 @@ homebrew_taps:
   - 'homebrew/completions'
   - 'versent/homebrew-taps'
   - 'caskroom/cask'
+  - 'jmespath/jmespath'
 
 homebrew_packages:
   - { name: 'coreutils' }
@@ -50,6 +51,7 @@ homebrew_packages:
   - { name: 'rkhunter' }
   - { name: 'qrencode' }
   - { name: 'oath-toolkit' }
+  - { name: 'jp' }
 
 homebrew_cask_packages:
   - { name: 'aws-vault' }
