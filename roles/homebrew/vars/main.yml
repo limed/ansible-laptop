@@ -53,6 +53,7 @@ homebrew_packages:
   - { name: 'oath-toolkit' }
   - { name: 'jp' }
   - { name: 'zbar' }
+  - { name: 'keybase' }
 
 homebrew_cask_packages:
   - { name: 'aws-vault' }
