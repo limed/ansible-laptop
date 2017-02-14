@@ -8,3 +8,21 @@
   homebrew:
     name: gnupg2
     state: present
+
+- name: Create .gnupg directory
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.gnupg"
+    mode: '0700'
+    state: directory
+
+- name: Copy gpg-agent.conf
+  copy:
+    src: gpg-agent.conf
+    dest: "{{ lookup('env', 'HOME') }}/.gnupg/gpg-agent.conf"
+    mode: '0644'
+
+- name: Copy gpg.conf template
+  template:
+    src: gpg.conf.j2
+    dest: "{{ lookup('env', 'HOME') }}/.gnupg/gpg.conf"
+    mode: '0600'
