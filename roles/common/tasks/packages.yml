@@ -1,9 +1,9 @@
 ---
-- name: Install pip with easy_install
-  become: true
-  become_method: sudo
-  easy_install:
-    name: pip
+#- name: Install pip with easy_install
+#  become: true
+#  become_method: sudo
+#  easy_install:
+#    name: pip
 
 - name: Install common gem packages
   become: true
