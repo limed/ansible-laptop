@@ -53,10 +53,11 @@ homebrew_packages:
   - { name: 'oath-toolkit' }
   - { name: 'jp' }
   - { name: 'zbar' }
-  - { name: 'keybase' }
+  - { name: 'streamlink' }
 
 homebrew_cask_packages:
   - { name: 'aws-vault' }
   - { name: 'consul-cli' }
   - { name: 'streamlink-twitch-gui' }
   - { name: 'spotify' }
+  - { name: 'keybase' }

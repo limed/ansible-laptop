@@ -13,12 +13,10 @@ pip_packages:
   - { name: 'jmespath' }
   - { name: 'PyYAML' }
   - { name: 'credstash' }
-  - { name: 'livestreamer' }
   - { name: 'docopts' }
-  - { name: 'streamlink' }
   - { name: 'pyspf' }
   - { name: 'pydns' }
   - { name: 'Jinja2' }
-  - { name: 'skew' }
+  #- { name: 'skew' }
   - { name: 'keychain' }
   #- { name: 'python-ldap', extra_args: "--global-option=build_ext --global-option=\"-I$(xcrun --show-sdk-path)/usr/include/sasl\"" }
