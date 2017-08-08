@@ -20,4 +20,5 @@ pip_packages:
   - { name: 'pydns' }
   - { name: 'Jinja2' }
   - { name: 'skew' }
+  - { name: 'keychain' }
   #- { name: 'python-ldap', extra_args: "--global-option=build_ext --global-option=\"-I$(xcrun --show-sdk-path)/usr/include/sasl\"" }
