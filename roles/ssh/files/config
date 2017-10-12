@@ -45,6 +45,5 @@ Host gads1.private.scl3.mozilla.com
     ForwardX11 yes
 
 Host *nubis.allizom.org
-    User ec2-user
     ControlPath none
     ControlMaster no
