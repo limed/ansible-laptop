@@ -34,9 +34,7 @@ homebrew_packages:
   - { name: 'urlview' }
   - { name: 'ssh-copy-id' }
   - { name: 'go' }
-  - { name: 'htop' }
   - { name: 'wget' }
-  - { name: 'lastpass-cli', install_options: "with-pinentry,with-doc" }
   - { name: 'livestreamer' }
   - { name: 'ffmpeg' }
   - { name: 'shellcheck' }
