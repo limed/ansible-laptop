@@ -52,6 +52,7 @@ homebrew_packages:
   - { name: 'jp' }
   - { name: 'zbar' }
   - { name: 'streamlink' }
+  - { name: 'slackcat' }
 
 homebrew_cask_packages:
   - { name: 'aws-vault' }
