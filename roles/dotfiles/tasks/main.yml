@@ -10,34 +10,40 @@
   copy:
     src: dotfiles/mailcap
     dest: "{{ lookup('env', 'HOME') }}/.mailcap"
+    owner: "{{ username }}"
     mode: '0644'
 
 - name: Copy urlview file
   copy:
     src: dotfiles/urlview
     dest: "{{ lookup('env', 'HOME') }}/.urlview"
+    owner: "{{ username }}"
     mode: '0644'
 
 - name: Copy inputrc file
   copy:
     src: dotfiles/inputrc
     dest: "{{ lookup('env', 'HOME') }}/.urlview"
+    owner: "{{ username }}"
     mode: '0644'
 
 - name: Copy bashrc
   copy:
     src: bash/bashrc
     dest: "{{ lookup('env', 'HOME') }}/.bashrc"
+    owner: "{{ username }}"
     mode: '0644'
 
 - name: Copy bash_profile
   copy:
     src: bash/bash_profile
     dest: "{{ lookup('env', 'HOME') }}/.bash_profile"
+    owner: "{{ username }}"
     mode: '0644'
 
 - name: Copy bash.d
   copy:
-    src: bash/bash.d
-    dest: "{{ lookup('env', 'HOME') }}/.bash.d"
+    src: bash/bash.d/
+    dest: "{{ lookup('env', 'HOME') }}/.bash.d/"
+    owner: "{{ username }}"
     mode: '0644'
