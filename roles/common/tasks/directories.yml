@@ -26,6 +26,12 @@
     owner: "{{ lookup('env', 'USER') }}"
     state: directory
 
+- name: Create ~/.passwd directory
+  file:
+    path: "{{ lookup('env', 'HOME')}}/.passwd"
+    owner: "{{ lookup('env', 'USER')}}"
+    state: directory
+
 #- name: Create /docker  volume directory
 # become: true
 # become_method: sudo

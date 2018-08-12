@@ -23,3 +23,21 @@
     src: dotfiles/inputrc
     dest: "{{ lookup('env', 'HOME') }}/.urlview"
     mode: '0644'
+
+- name: Copy bashrc
+  copy:
+    src: bash/bashrc
+    dest: "{{ lookup('env', 'HOME') }}/.bashrc"
+    mode: '0644'
+
+- name: Copy bash_profile
+  copy:
+    src: bash/bash_profile
+    dest: "{{ lookup('env', 'HOME') }}/.bash_profile"
+    mode: '0644'
+
+- name: Copy bash.d
+  copy:
+    src: bash/bash.d
+    dest: "{{ lookup('env', 'HOME') }}/.bash.d"
+    mode: '0644'

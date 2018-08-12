@@ -77,7 +77,6 @@ function aws-vault() {
         echo "aws-vault is not on your path you do not have it installed"
         exit 1
     fi
-
     case "$1" in
         exec)
             local action=$1
@@ -85,10 +84,24 @@ function aws-vault() {
             local profile=$1
             shift 1
             local options="--assume-role-ttl=1h --session-ttl=4h"
-            ${aws_vault_cmd} ${action} ${profile} ${options} -- $@
+            #${aws_vault_cmd} ${action} ${profile} ${options} -- $@
+            ${aws_vault_cmd} ${action} ${profile} ${options} $@
         ;;
         *)
             ${aws_vault_cmd} $@
         ;;
     esac
+}
+
+# docker fucntions
+function drm() {
+    docker rm $(docker ps -f "status=exited" -q -a)
+}
+
+function drmi() {
+    docker rmi $(docker images -qf dangling=true)
+}
+
+function drmv() {
+    docker volume rm $(docker volume ls -qf dangling=true)
 }

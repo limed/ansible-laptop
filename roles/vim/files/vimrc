@@ -49,11 +49,6 @@ function TrimWhiteSpace()
 : ''
 :endfunction
 
-"autocmd FileWritePre   * :call TrimWhiteSpace()
-"autocmd FileAppendPre  * :call TrimWhiteSpace()
-"autocmd FilterWritePre * :call TrimWhiteSpace()
-"autocmd BufWritePre    * :call TrimWhiteSpace()
-
 " ----- Key bindings -------
 :map cd :call TrimWhiteSpace()<CR>
 :map cc v:s!^!//!g <CR><CR>
@@ -83,3 +78,6 @@ if has("autocmd")
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
 endif
+
+let g:go_version_warning = 0
+"let g:terraform_align=1

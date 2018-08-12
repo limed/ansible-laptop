@@ -12,15 +12,15 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm*|rxvt*)
-        PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}'"$GITPS1"': ${PWD/$HOME/~}\007"'
+xterm*|rxvt*)
+    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}'"$GITPS1"': ${PWD/$HOME/~}\007"'
     ;;
-    xterm-color)
-        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\][\u@\h]'"$GITPS1"'\033[00m\]\033[01;34m\][\w]\033[00m\]\$ '
-    ;;
-    *)
-        #PS1='${debian_chroot:+($debian_chroot)}[\[\u@\h][\033[1;34m\w\[\033[0m]$ '
-        #PS1='${debian_chroot:+($debian_chroot)}[\u@\h][\w]$ '
+xterm-color)
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\][\u@\h]'"$GITPS1"'\033[00m\]\033[01;34m\][\w]\033[00m\]\$ '
+	;;
+*)
+    #PS1='${debian_chroot:+($debian_chroot)}[\[\u@\h][\033[1;34m\w\[\033[0m]$ '
+    #PS1='${debian_chroot:+($debian_chroot)}[\u@\h][\w]$ '
     ;;
 esac
 
