@@ -1,9 +1,9 @@
 ---
 homebrew_taps:
-  - 'homebrew/versions'
-  - 'homebrew/completions'
+  #- 'homebrew/versions'
+  #- 'homebrew/completions'
   - 'versent/homebrew-taps'
-  - 'caskroom/cask'
+  #- 'caskroom/cask'
   - 'jmespath/jmespath'
 
 homebrew_packages:
@@ -53,6 +53,8 @@ homebrew_packages:
   - { name: 'zbar' }
   - { name: 'streamlink' }
   - { name: 'slackcat' }
+  - { name: 'kubernetes-cli' }
+  - { name: 'kops' }
 
 homebrew_cask_packages:
   - { name: 'aws-vault' }
