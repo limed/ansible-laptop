@@ -20,6 +20,8 @@
       tags: docker
     - role: 'node'
       tags: node
+    - role: 'dotfiles'
+      tags: dotfiles
     - role: 'git'
       tags: git
       git_user: limed
