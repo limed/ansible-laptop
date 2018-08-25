@@ -55,6 +55,7 @@ homebrew_packages:
   - { name: 'slackcat' }
   - { name: 'kubernetes-cli' }
   - { name: 'kops' }
+  - { name: 'gnu-sed' }
 
 homebrew_cask_packages:
   - { name: 'aws-vault' }
