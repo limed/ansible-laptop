@@ -16,7 +16,6 @@ homebrew_packages:
   - { name: 'keychain' }
   - { name: 'curl' }
   - { name: 'pinentry' }
-  - { name: 'hub' }
   - { name: 'gist' }
   - { name: 'jq' }
   - { name: 'terraform' }

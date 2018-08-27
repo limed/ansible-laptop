@@ -47,3 +47,11 @@
     dest: "{{ lookup('env', 'HOME') }}/.bash.d/"
     owner: "{{ username }}"
     mode: '0644'
+
+- name: Create a .config file
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.config"
+    owner: "{{ username }}"
+    mode: '0700'
+    state: directory
+

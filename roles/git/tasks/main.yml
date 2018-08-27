@@ -9,6 +9,17 @@
     name: git-crypt
     state: present
 
+- name: Install hub
+  homebrew:
+    name: hub
+    state: present
+
+- name: Copy hub config
+  template:
+    src: hub.j2
+    dest: "{{ lookup('env', 'HOME') }}/.config/hub"
+    mode: '0644'
+
 - name: 'Copy gitconfig'
   template:
     src: gitconfig.j2
