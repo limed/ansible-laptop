@@ -62,3 +62,4 @@ homebrew_cask_packages:
   - { name: 'streamlink-twitch-gui' }
   - { name: 'spotify' }
   - { name: 'keybase' }
+  - { name: 'vlc' }
