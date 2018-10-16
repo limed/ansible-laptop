@@ -55,6 +55,7 @@ homebrew_packages:
   - { name: 'kubernetes-cli' }
   - { name: 'kops' }
   - { name: 'gnu-sed' }
+  - { name: 'kubectx', install_options: '--with-short-names' }
 
 homebrew_cask_packages:
   - { name: 'aws-vault' }
