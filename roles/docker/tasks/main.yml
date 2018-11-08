@@ -1,7 +1,17 @@
 ---
-- name: Install docker package via homebrew
-  homebrew:
+#- name: Install docker package via homebrew
+#  homebrew:
+#    name: docker
+#    state: present
+
+- name: Install docker package via homebrew cask
+  homebrew_cask:
     name: docker
+    state: present
+
+- name: Install docker completion
+  homebrew:
+    name: docker-completion
     state: present
 
 - name: Create docker folder
@@ -9,8 +19,3 @@
     path: "{{ lookup('env', 'HOME') }}/docker"
     mode: '0755'
     state: directory
-
-#- name: Install docker-completion
-  #homebrew:
-  #name: docker-completion
-  #state: present
