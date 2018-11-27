@@ -20,7 +20,6 @@ set backspace=indent,eol,start  " allow backspacing over everything in insert mo
 set term=ansi                   " set term to ansi
 set noerrorbells                " do not beep on errors
 set ttyfast                     " Smoother scrolling
-set mouse=a                     " have mouse enabled at all time
 set virtualedit=all             " allows curser to roam freely
 set backspace=2                 " allows backspacing over everything
 set showmode                    " show current mode you are in
@@ -31,26 +30,19 @@ set novisualbell                " no sound on error
 set title                       " Shows title in console window
 set ls=2                        " always show status line
 set foldmethod=marker           " fold method using markers
+set encoding=utf-8              " Set encoding to utf-8
+
+if has('mouse')
+    set mouse=a
+endif
 
 "------------ Graphical block -----------------
 syntax on   " Turns on syntax highlighting
-"color evening
 color desert
 set nu          " Line numbers
 filetype plugin indent on
 
-" ------- Shows trailing whitespaces --------
-highlight WhitespaceEOL ctermbg=red guibg=red
-match WhiteSpaceEOL /\s\+\%#\@!$/
-
-" ------ Removes trailing spaces ------
-function TrimWhiteSpace()
-: %s/\s*$//
-: ''
-:endfunction
-
 " ----- Key bindings -------
-:map cd :call TrimWhiteSpace()<CR>
 :map cc v:s!^!//!g <CR><CR>
 :map cx v:s!^\s*//!!g <CR>v=<CR>
 :vmap cc :s!^!//!g <CR>
@@ -59,25 +51,57 @@ function TrimWhiteSpace()
 map <Leader>= :Tabularize /=>/l1<Return>
 "map <Leader>c :SyntasticCheck<Return>
 
-" Only do this part when compiled with support for autocommands
+" Only do this part when compiled with support for autocommands.
 if has("autocmd")
-  " Enable file type detection
-  filetype on
 
-  " Syntax of these languages is fussy over tabs Vs spaces
-  autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+  " Enable file type detection.
+  " Use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in C files, etc.
+  " Also load indent files, to automatically do language-dependent indenting.
+  filetype plugin indent on
 
-  " Customisations based on house-style (arbitrary)
-  autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
-  autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType terraform setlocal ts=2 sts=2 sw=2 expandtab
+  " Put these in an autocmd group, so that we can delete them easily.
+  augroup vimrcEx
+    au!
 
-  " Treat .rss files as XML
-  autocmd BufNewFile,BufRead *.rss setfiletype xml
-endif
+    " For all text files set 'textwidth' to 78 characters.
+    autocmd FileType text setlocal textwidth=78
 
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid or when inside an event handler
+    " (happens when dropping a file on gvim).
+    " Also don't do it when the mark is in the first line, that is the default
+    " position when opening a file.
+    autocmd BufReadPost *
+          \ if line("'\"") > 1 && line("'\"") <= line("$") |
+          \	exe "normal! g`\"" |
+          \ endif
+
+  augroup END
+else
+endif " has("autocmd")
+
+
+" File specific settings
+autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType terraform setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType dockerfile set noexpandtab
+autocmd BufNewFile,BufRead *.rss setfiletype xml
+au BufNewFile,BufRead *.vim setlocal noet ts=4 sw=4 sts=4
+au BufNewFile,BufRead *.txt setlocal noet ts=4 sw=4
+au BufNewFile,BufRead *.md setlocal spell noet ts=4 sw=4
+au BufNewFile,BufRead *.yml,*.yaml setlocal ts=2 sw=2 expandtab
+
+" Bundle / autoload specific options
 let g:go_version_warning = 0
-"let g:terraform_align=1
+let g:terraform_fmt_on_save=1
+
+" auto strip whitespace except for file with extention blacklisted
+let blacklist = ['diff', 'gitcommit', 'unite', 'qf', 'help', 'markdown']
+autocmd BufWritePre * if index(blacklist, &ft) < 0 | StripWhitespace
+
+" vim:ts=2:sw=2:et
