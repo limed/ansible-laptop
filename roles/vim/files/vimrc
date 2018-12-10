@@ -99,10 +99,10 @@ autocmd BufNewFile,BufRead *.yml,*.yaml setlocal ts=2 sw=2 expandtab
 
 " Bundle / autoload specific options
 let g:go_version_warning = 0
-let g:terraform_fmt_on_save=1
+let g:terraform_fmt_on_save = 1
 
 " auto strip whitespace except for file with extention blacklisted
-let blacklist = ['diff', 'gitcommit', 'unite', 'qf', 'help', 'markdown']
-autocmd BufWritePre * if index(blacklist, &ft) < 0 | StripWhitespace
+let g:better_whitespace_filetypes_blacklist = ['diff', 'gitcommit', 'unite', 'qf', 'help', 'markdown']
+let g:better_whitespace_enabled = 1
 
 " vim:ts=2:sw=2:et
