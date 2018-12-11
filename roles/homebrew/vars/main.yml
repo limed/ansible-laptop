@@ -1,10 +1,9 @@
 ---
 homebrew_taps:
-  #- 'homebrew/versions'
-  #- 'homebrew/completions'
   - 'versent/homebrew-taps'
-  #- 'caskroom/cask'
+  - 'caskroom/cask'
   - 'jmespath/jmespath'
+  - 'caskroom/fonts'
 
 homebrew_packages:
   - { name: 'coreutils' }
@@ -64,3 +63,5 @@ homebrew_cask_packages:
   - { name: 'spotify' }
   - { name: 'keybase' }
   - { name: 'vlc' }
+  - { name: 'yakyak' }
+  - { name: 'font-noto-color-emoji' }
