@@ -91,6 +91,7 @@ autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
 autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType terraform setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType dockerfile set noexpandtab
+autocmd BufNewFile,BufRead *.py setlocal ts=4 sts=4 sw=4 expandtab
 autocmd BufNewFile,BufRead *.rss setfiletype xml
 autocmd BufNewFile,BufRead *.vim setlocal noet ts=4 sw=4 sts=4
 autocmd BufNewFile,BufRead *.txt setlocal noet ts=4 sw=4
@@ -99,12 +100,11 @@ autocmd BufNewFile,BufRead *.yml,*.yaml setlocal ts=2 sw=2 expandtab
 
 " Bundle / autoload specific options
 let g:go_version_warning = 0
+let g:go_fmt_autosave = 0
 let g:terraform_fmt_on_save = 1
 
 " auto strip whitespace except for file with extention blacklisted
 let blacklist = ['diff', 'gitcommit', 'unite', 'qf', 'help', 'markdown']
 autocmd BufWritePre * if index(blacklist, &ft) < 0 | StripWhitespace
-"let g:better_whitespace_filetypes_blacklist = ['diff', 'gitcommit', 'unite', 'qf', 'help', 'markdown']
-"let g:better_whitespace_enabled = 1
 
 " vim:ts=2:sw=2:et

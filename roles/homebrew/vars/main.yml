@@ -38,7 +38,7 @@ homebrew_packages:
   - { name: 'shellcheck' }
   - { name: 'libao', install_options: '--HEAD' }
   - { name: 'pianobar' }
-  - { name: 'offlineimap' }
+  #- { name: 'offlineimap' }
   - { name: 'mutt' }
   - { name: 'sshuttle' }
   - { name: 'unicreds' }
