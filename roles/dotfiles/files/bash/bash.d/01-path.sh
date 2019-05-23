@@ -12,7 +12,7 @@ brew_get_prefix() {
 # basic os detection
 case "$OSTYPE" in
     darwin*)
-        BREW_PREFIX="/usr/local/opt/"
+        BREW_PREFIX="/usr/local/opt"
         GETTEXT_PATH="${BREW_PREFIX}/gettext/bin"
         COREUTIL_PATH="${BREW_PREFIX}/coreutils/libexec/gnubin"
         GNUSED_PATH="${BREW_PREFIX}/gnu-sed/libexec/gnubin"
@@ -28,4 +28,3 @@ esac
 
 export PATH
 export GOPATH
-export GO15VENDOREXPERIMENT=1

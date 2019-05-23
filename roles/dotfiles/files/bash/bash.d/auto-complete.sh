@@ -3,6 +3,12 @@
 # aws cli bash autocomplete
 complete -C aws_completer aws
 
+# Download autocomplete from
+# https://raw.githubusercontent.com/99designs/aws-vault/master/completions/bash/aws-vault
+if [ -f ${HOME}/.bash.d/aws-vault ]; then
+    . ${HOME}/.bash.d/aws-vault
+fi
+
 # We assume that its only linux or mac
 # so just 2 conditions here
 if [[ "$OSTYPE" == "darwin"* ]]; then
