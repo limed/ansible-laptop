@@ -96,5 +96,6 @@ function aws-vault() {
 function kube-export(){
     local account_name=$1
     if [ -z "${account_name}" ]; then "Usage: $FUNCNAME [account name]"; return 1; fi
-        export KUBECONFIG="${HOME}/.kube/${account_name}-kube.config"
-    }
+
+    export KUBECONFIG="${HOME}/.kube/${account_name}-kube.config"
+}
