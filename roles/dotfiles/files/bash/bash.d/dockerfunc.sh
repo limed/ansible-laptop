@@ -11,4 +11,7 @@ function drmv() {
     docker volume rm $(docker volume ls -qf dangling=true)
 }
 
+function travis() {
+    docker run --rm -it -w /code -v $(pwd):/code limed/travis:latest "${@}"
+}
 

@@ -11,6 +11,7 @@ homebrew_packages:
   - { name: 'bash' }
   - { name: 'bash-completion' }
   - { name: 'python' }
+  - { name: 'python3' }
   - { name: 'pwgen' }
   - { name: 'keychain' }
   - { name: 'curl' }
@@ -58,7 +59,6 @@ homebrew_packages:
 
 homebrew_cask_packages:
   - { name: 'aws-vault' }
-  - { name: 'consul-cli' }
   - { name: 'streamlink-twitch-gui' }
   - { name: 'spotify' }
   - { name: 'keybase' }

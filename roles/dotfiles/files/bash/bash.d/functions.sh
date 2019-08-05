@@ -97,5 +97,19 @@ function kube-export(){
     local account_name=$1
     if [ -z "${account_name}" ]; then "Usage: $FUNCNAME [account name]"; return 1; fi
 
-    export KUBECONFIG="${HOME}/.kube/${account_name}-kube.config"
+    export KUBECONFIG="${HOME}/.kube/${account_name}.config"
+}
+
+function ssh-ssm() {
+    local private_dns=$1
+    if [ -z "${private_dns}" ]; then echo "Usage $FUNCNAME <ec2 private dns>"; return 1; fi
+
+    instance_id=$(aws ec2 describe-instances --filters "Name=private-dns-name, Values=${private_dns}" --query "Reservations[*].Instances[*].InstanceId" --output text)
+
+    if [ -z "${instance_id}" ]; then
+        echo "Unable to find instance ID"
+        return 1
+    fi
+
+    aws ssm start-session --target "${instance_id}"
 }
