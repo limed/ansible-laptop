@@ -1,0 +1,7 @@
+---
+- name: Install pianobar
+  homebrew:
+    name: pianobar
+    state: latest
+
+
