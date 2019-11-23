@@ -4,6 +4,7 @@ homebrew_taps:
   - 'caskroom/cask'
   - 'jmespath/jmespath'
   - 'caskroom/fonts'
+  - 'weaveworks/tap'
 
 homebrew_packages:
   - { name: 'coreutils' }
