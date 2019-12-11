@@ -11,7 +11,6 @@ homebrew_packages:
   - { name: 'findutils' }
   - { name: 'bash' }
   - { name: 'bash-completion' }
-  - { name: 'python' }
   - { name: 'python3' }
   - { name: 'pwgen' }
   - { name: 'keychain' }
@@ -39,7 +38,7 @@ homebrew_packages:
   - { name: 'shellcheck' }
   #- { name: 'offlineimap' }
   #- { name: 'mutt' }
-  - { name: 'sshuttle' }
+  #- { name: 'sshuttle' }
   - { name: 'unicreds' }
   - { name: 'httpie' }
   - { name: 'ghi' }
@@ -56,6 +55,10 @@ homebrew_packages:
   - { name: 'kubectx', install_options: '--with-short-names' }
   - { name: 'aws-iam-authenticator' }
   - { name: 'pre-commit' }
+  - { name: 'eksctl' }
+  - { name: 'fluxctl' }
+  - { name: 'kubeseal' }
+  - { name: 'stern' }
 
 homebrew_cask_packages:
   - { name: 'aws-vault' }
