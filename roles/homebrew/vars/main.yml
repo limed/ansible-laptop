@@ -5,6 +5,7 @@ homebrew_taps:
   - 'jmespath/jmespath'
   - 'caskroom/fonts'
   - 'weaveworks/tap'
+  - 'aws/tap'
 
 homebrew_packages:
   - { name: 'coreutils' }
@@ -23,7 +24,6 @@ homebrew_packages:
   - { name: 'ansible' }
   - { name: 'dos2unix' }
   - { name: 'watch' }
-  #- { name: 'subversion' }
   - { name: 'swaks' }
   - { name: 'ipcalc' }
   - { name: 'packer' }
@@ -42,7 +42,7 @@ homebrew_packages:
   - { name: 'unicreds' }
   - { name: 'httpie' }
   - { name: 'ghi' }
-  - { name: 'rkhunter' }
+  #- { name: 'rkhunter' }
   - { name: 'qrencode' }
   - { name: 'oath-toolkit' }
   - { name: 'jp' }
@@ -50,6 +50,8 @@ homebrew_packages:
   - { name: 'streamlink' }
   - { name: 'slackcat' }
   - { name: 'kubernetes-cli' }
+  - { name: 'kubernetes-helm' }
+  - { name: 'kustomize' }
   - { name: 'kops' }
   - { name: 'gnu-sed' }
   - { name: 'kubectx', install_options: '--with-short-names' }
@@ -59,6 +61,7 @@ homebrew_packages:
   - { name: 'fluxctl' }
   - { name: 'kubeseal' }
   - { name: 'stern' }
+  - { name: 'aws-iam-authenticator' }
 
 homebrew_cask_packages:
   - { name: 'aws-vault' }
