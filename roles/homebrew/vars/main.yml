@@ -71,3 +71,4 @@ homebrew_cask_packages:
   - { name: 'vlc' }
   - { name: 'yakyak' }
   - { name: 'font-noto-color-emoji' }
+  - { name: 'google-cloud-sdk' }
