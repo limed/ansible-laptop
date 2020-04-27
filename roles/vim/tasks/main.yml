@@ -27,6 +27,15 @@
     repo: 'https://github.com/fatih/vim-go.git'
     dest: "{{ lookup('env', 'HOME') }}/.vim/bundle/vim-go"
 
+- name: 'Install vim-sensible'
+  git:
+    repo: 'https://tpope.io/vim/sensible.git'
+    dest: "{{ lookup('env', 'HOME') }}/.vim/bundle/sensible"
+- name: 'Install vim-syntastic'
+  git:
+    repo: 'https://github.com/scrooloose/syntastic.git'
+    dest: "{{ lookup('env', 'HOME') }}/.vim/bundle/syntastic"
+
 - name: 'Install vim-ansible-yaml'
   git:
     repo: 'https://github.com/pearofducks/ansible-vim.git'

@@ -5,12 +5,13 @@
 call pathogen#infect()
 
 "------------ editor behaviour block ------------------
+set nocompatible
 set shiftwidth=4                " Use 4 spaces when text is indented
 set softtabstop=4
 set tabstop=4                   " sets how many spaces a tab is
 set smarttab
 set expandtab
-"set autoindent                  " auto indent
+set autoindent                  " auto indent
 set smartindent                 " smart indent
 set ruler                       " show curser position at all times
 set incsearch                   " incremental search
@@ -31,16 +32,18 @@ set title                       " Shows title in console window
 set ls=2                        " always show status line
 set foldmethod=marker           " fold method using markers
 set encoding=utf-8              " Set encoding to utf-8
+"set signcolumn=yes
+set nu                          " Line numbers
+
+syntax on   " Turns on syntax highlighting
+color desert
+
+filetype plugin on
+filetype indent on
 
 if has('mouse')
     set mouse=a
 endif
-
-"------------ Graphical block -----------------
-syntax on   " Turns on syntax highlighting
-color desert
-set nu          " Line numbers
-filetype plugin indent on
 
 " ----- Key bindings -------
 :map cc v:s!^!//!g <CR><CR>
@@ -98,12 +101,19 @@ autocmd BufNewFile,BufRead *.vim setlocal noet ts=4 sw=4 sts=4
 autocmd BufNewFile,BufRead *.txt setlocal noet ts=4 sw=4
 autocmd BufNewFile,BufRead *.md setlocal spell noet ts=4 sw=4
 autocmd BufNewFile,BufRead *.yml,*.yaml setlocal sts=2 ts=2 sw=2 expandtab
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 
 " Bundle / autoload specific options
 let g:go_version_warning = 0
-"let g:go_code_completion_enabled = 0
-let g:go_gopls_enabled = 0
-let g:go_fmt_autosave = 0
+let g:go_code_completion_enabled = 1
+let g:go_gopls_enabled = 1
+let g:go_fmt_autosave = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+
 let g:terraform_fmt_on_save = 1
 let g:python_highlight_all = 1
 
