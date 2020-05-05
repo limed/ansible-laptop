@@ -83,12 +83,11 @@ function aws-vault() {
             shift 1
             local profile=$1
             shift 1
-            local options="--assume-role-ttl=1h --session-ttl=4h"
-            #${aws_vault_cmd} ${action} ${profile} ${options} -- $@
+            local options="--duration=12h"
             ${aws_vault_cmd} ${action} ${profile} ${options} $@
         ;;
         *)
-            ${aws_vault_cmd} $@
+            ${aws_vault_cmd} "${@}"
         ;;
     esac
 }
