@@ -33,3 +33,4 @@ alias kns="kubens"
 alias kctx="kubectx"
 alias k="kubectl"
 alias awsunset='unset AWS_ACCESS_KEY_ID; unset AWS_SECRET_ACCESS_KEY; unset AWS_SESSION_TOKEN; unset AWS_MAWS_PROFILE; unset AWS_SESSION_EXPIRATION;'
+alias googenv='env | grep GOOGLE'

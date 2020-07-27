@@ -1,3 +1,7 @@
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NOCOLOR='\033[0m'
+
 function abort() {
     echo $*
     exit 1
@@ -92,13 +96,33 @@ function aws-vault() {
     esac
 }
 
+function goog() {
+    local project_name=$1
+    if [ -z "${project_name}" ]; then "Usage: $FUNCNAME [project name]"; return 1; fi
+
+    if [ "${project_name}" == "ls" ]; then
+        echo -e "${GREEN}Listing service accounts${NOCOLOR}"
+        command ls --color --format=single-column "${HOME}/.gcloud"
+        return 0
+    elif [ "${project_name}" == "whoami" ]; then
+        echo "${GOOGLE_APPLICATION_CREDENTIALS}"
+        return 0
+    fi
+
+    FULLFILE="${1}"
+    FILENAME=$(basename -- "${FULLFILE}")
+    FILENAME="${FILENAME%.*}"
+    export GOOGLE_PROJECT="${FILENAME}"
+    export GOOGLE_APPLICATION_CREDENTIALS="${HOME}/.gcloud/${1}"
+}
+
 function kube-export(){
     local account_name=$1
     if [ -z "${account_name}" ]; then "Usage: $FUNCNAME [account name]"; return 1; fi
 
     if [ "${account_name}" == "ls" ]; then
-        echo "Listing k8s configs"
-        command ls --color --format=single-column "${HOME}"/.kube/*.config
+        echo -e "${GREEN}Listing k8s configs${NOCOLOR}"
+        command ls --color --format=single-column "${HOME}/.kube/*.config"
         return 0
     fi
 

@@ -3,6 +3,12 @@
 # aws cli bash autocomplete
 complete -C aws_completer aws
 
+# gcloud cli autocomplete
+if [ -d "/usr/local/Caskroom/google-cloud-sdk" ]; then
+    . /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc
+    . /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc
+fi
+
 # Download autocomplete from
 # https://raw.githubusercontent.com/99designs/aws-vault/master/completions/bash/aws-vault
 if [ -f ${HOME}/.bash.d/aws-vault ]; then
