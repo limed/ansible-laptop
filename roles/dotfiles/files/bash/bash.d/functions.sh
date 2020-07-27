@@ -122,7 +122,7 @@ function kube-export(){
 
     if [ "${account_name}" == "ls" ]; then
         echo -e "${GREEN}Listing k8s configs${NOCOLOR}"
-        command ls --color --format=single-column "${HOME}/.kube/*.config"
+        command ls --color --format=single-column "${HOME}"/.kube/*.config
         return 0
     fi
 
