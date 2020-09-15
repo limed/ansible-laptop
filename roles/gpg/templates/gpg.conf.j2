@@ -10,7 +10,7 @@
 default-key {{ gpg_default_key | default('0xC8D79F31AD6A6C85') }}
 
 # Default keyserver
-keyserver hkp://{{ gpg_keyserver | default('gpg.mozilla.org') }}
+keyserver hkps://{{ gpg_keyserver | default('keys.openpgp.org') }}
 
 # when outputting certificates, view user IDs distinctly from keys:
 fixed-list-mode
