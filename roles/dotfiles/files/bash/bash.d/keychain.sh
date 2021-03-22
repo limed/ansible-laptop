@@ -3,7 +3,7 @@ if [[ -z "${KEYCHAIN}" ]]; then
     echo "Please install keychain"
 fi
 
-KEYS=(id_rsa id_rsa_boomer)
+KEYS=(id_ed25519 id_rsa_boomer)
 
 if [ -d ${HOME}/.ssh ] || [ -d ${HOME}/.gnupg ]; then
     for i in ${KEYS[@]}; do

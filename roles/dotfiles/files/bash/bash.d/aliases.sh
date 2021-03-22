@@ -21,12 +21,10 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias mplayer='mplayer -nojoystick -nolirc '
 alias ncmpc='ncmpc --colors'
-alias gam='~/gam/gam'
 alias git='hub'
 alias awsenv='env | grep AWS'
 alias awsexpire="date -d @${AWS_SESSION_EXPIRATION}"
 alias kubeenv='env | grep KUBECONFIG'
-alias nubisctl='~/nubis/nubis-ctl/nubis-ctl'
 alias saferm='shred -vfz -u -n 10'
 alias terrafmt="terraform fmt -write=true -diff=true"
 alias kns="kubens"

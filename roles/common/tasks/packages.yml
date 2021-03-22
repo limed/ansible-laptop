@@ -5,22 +5,21 @@
 #  easy_install:
 #    name: pip
 
-- name: Install common gem packages
-  become: true
-  become_method: sudo
-  gem:
-    name: "{{ item.name }}"
-    user_install: "{{ item.user_install | default() }}"
-    state: present
-  with_items:
-    - "{{ gem_packages }}"
+#- name: Install common gem packages
+#  become: true
+#  become_method: sudo
+#  gem:
+#    name: "{{ item.name }}"
+#  user_install: "{{ item.user_install | default() }}"
+#  state: present
+#with_items:
+  #  - "{{ gem_packages }}"
 
 - name: Install common pip packages
-  become: true
-  become_method: sudo
   pip:
     name: "{{ item.name }}"
     extra_args: "{{ item.extra_args | default() }}"
+    executable: pip3
     state: present
   with_items:
     - "{{ pip_packages }}"

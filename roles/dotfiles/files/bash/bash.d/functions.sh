@@ -142,3 +142,15 @@ function ssh-ssm() {
 
     aws ssm start-session --target "${instance_id}"
 }
+
+function gen-ssh-key() {
+    local keyname=$1
+    local filename="id_ed25519-${keyname}"
+    if [ -z "${keyname}" ]; then echo "Usage: $FUNCNAME <keyname>"; return 1; fi
+
+    if [ -f "${HOME}/.ssh/${filename}" ]; then
+        echo "[$FUNCNAME]: Key already exists"
+        return 1
+    fi
+    ssh-keygen -o -a 100 -t ed25519 -f "${HOME}/.ssh/${filename}" -C "${keyname}"
+}

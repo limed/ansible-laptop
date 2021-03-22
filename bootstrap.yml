@@ -7,23 +7,39 @@
 
   roles:
     - role: homebrew
-      tags: homebrew
+      tags:
+        - homebrew
+        - generic
     - role: common
-      tags: common
+      tags:
+        - common
+        - generic
     - role: 'vim'
-      tags: vim
+      tags:
+        - vim
+        - generic
     - role: 'gpg'
-      tags: gpg
+      tags:
+        - gpg
     - role: 'ssh'
-      tags: ssh
+      tags:
+        - ssh
     - role: 'docker'
-      tags: docker
+      tags:
+        - docker
     - role: 'node'
-      tags: node
+      tags:
+        - node
     - role: 'dotfiles'
-      tags: dotfiles
+      tags:
+        - dotfiles
+    - role: apple
+      tags:
+        - apple
+        - generic
     - role: 'git'
-      tags: git
+      tags:
+        - git
       git_user: limed
       git_email: limed@mozilla.com
       github_username: limed

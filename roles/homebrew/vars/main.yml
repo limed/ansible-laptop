@@ -1,9 +1,9 @@
 ---
 homebrew_taps:
   - 'versent/homebrew-taps'
-  - 'caskroom/cask'
+  - 'homebrew/cask'
   - 'jmespath/jmespath'
-  - 'caskroom/fonts'
+  - 'homebrew/cask-fonts'
   - 'weaveworks/tap'
   - 'aws/tap'
 
@@ -17,38 +17,35 @@ homebrew_packages:
   - { name: 'keychain' }
   - { name: 'curl' }
   - { name: 'pinentry' }
-  - { name: 'gist' }
   - { name: 'jq' }
   - { name: 'terraform' }
   - { name: 'awscli' }
   - { name: 'ansible' }
   - { name: 'dos2unix' }
   - { name: 'watch' }
-  - { name: 'swaks' }
+  #- { name: 'swaks' }
   - { name: 'ipcalc' }
   - { name: 'packer' }
-  - { name: 'mtr' }
+  #- { name: 'mtr' }
   - { name: 'sqlite' }
-  - { name: 'unrar' }
   - { name: 'urlview' }
   - { name: 'ssh-copy-id' }
-  - { name: 'go' }
+  #- { name: 'go' }
   - { name: 'wget' }
   - { name: 'livestreamer' }
   - { name: 'shellcheck' }
   #- { name: 'offlineimap' }
   #- { name: 'mutt' }
   #- { name: 'sshuttle' }
-  - { name: 'unicreds' }
+  #- { name: 'unicreds' }
   - { name: 'httpie' }
   - { name: 'ghi' }
   #- { name: 'rkhunter' }
   - { name: 'qrencode' }
   - { name: 'oath-toolkit' }
-  - { name: 'jp' }
+  #- { name: 'jp' }
   - { name: 'zbar' }
-  - { name: 'streamlink' }
-  - { name: 'slackcat' }
+  #- { name: 'streamlink' }
   - { name: 'kubernetes-cli' }
   - { name: 'kubernetes-helm' }
   - { name: 'kustomize' }
@@ -59,9 +56,9 @@ homebrew_packages:
   - { name: 'pre-commit' }
   - { name: 'eksctl' }
   - { name: 'fluxctl' }
-  - { name: 'kubeseal' }
   - { name: 'stern' }
   - { name: 'aws-iam-authenticator' }
+  - { name: 'gpg2' }
 
 homebrew_cask_packages:
   - { name: 'aws-vault' }

@@ -1,23 +1,14 @@
 ---
 gem_packages:
-  - { name: 'puppet', user_install: 'no' }
-  - { name: 'puppet-lint', user_install: 'no' }
-  - { name: 'facter', user_install: 'no' }
-  - { name: 'puppet_forge', user_install: 'no' }
-  - { name: 'librarian-puppet', user_install: 'no' }
-  - { name: 'github_changelog_generator', user_install: 'no' }
   - { name: 'pygments.rb', user_install: 'no' }
 
 pip_packages:
   - { name: 'boto' }
   - { name: 'jmespath' }
   - { name: 'PyYAML' }
-  - { name: 'credstash' }
   - { name: 'docopts' }
   - { name: 'pyspf' }
   - { name: 'pydns' }
   - { name: 'Jinja2' }
   - { name: 'j2cli' }
-  #- { name: 'skew' }
   - { name: 'keyring' }
-  #- { name: 'python-ldap', extra_args: "--global-option=build_ext --global-option=\"-I$(xcrun --show-sdk-path)/usr/include/sasl\"" }

@@ -4,4 +4,12 @@
   #    command: defaults write com.apple.finder AppleShowAllFiles TRUE
 - name: Disable ds_store for remote shares
   command: defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
-  notify: Restart Finder
+  #notify: Restart Finder
+
+- name: Create screenshot directory
+  file:
+    path: "{{ lookup('env', 'USER') }}/Downloads/screenshots"
+    state: directory
+
+- name: Default save screenshot to specific folder
+  command: defaults write com.apple.screencapture location "{{ lookup('env','USER') }}/Downloads/screenshots"

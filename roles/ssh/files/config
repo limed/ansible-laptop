@@ -10,15 +10,6 @@ Host *
     HashKnownHosts no
     ForwardAgent yes
 
-Host svn.mozilla.org
-    User elim@mozilla.com
-
-Host hg.mozilla.org
-    User elim@mozilla.com
-
-Host people.mozilla.org
-    User elim
-
 Host ssh.mozilla.com
     User elim
     ControlMaster auto
@@ -39,11 +30,3 @@ Host ldap-tunnel
     HostName ldapmaster1.db.scl3.mozilla.com
     ProxyCommand ssh -W %h:%p -oProxyCommand=none ssh.mozilla.com
     LocalForward 9090 127.0.0.1:389
-
-Host gads1.private.scl3.mozilla.com
-    User elim
-    ForwardX11 yes
-
-Host *nubis.allizom.org
-    ControlPath none
-    ControlMaster no
