@@ -59,6 +59,7 @@ homebrew_packages:
   - { name: 'stern' }
   - { name: 'aws-iam-authenticator' }
   - { name: 'gpg2' }
+  - { name: 'gimme-aws-creds' }
 
 homebrew_cask_packages:
   - { name: 'aws-vault' }

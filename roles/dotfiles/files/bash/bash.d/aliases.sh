@@ -30,5 +30,5 @@ alias terrafmt="terraform fmt -write=true -diff=true"
 alias kns="kubens"
 alias kctx="kubectx"
 alias k="kubectl"
-alias awsunset='unset AWS_ACCESS_KEY_ID; unset AWS_SECRET_ACCESS_KEY; unset AWS_SESSION_TOKEN; unset AWS_MAWS_PROFILE; unset AWS_SESSION_EXPIRATION;'
+alias awsunset='unset AWS_ACCESS_KEY_ID; unset AWS_SECRET_ACCESS_KEY; unset AWS_SESSION_TOKEN; unset AWS_MAWS_PROFILE; unset AWS_SESSION_EXPIRATION; unset AWS_SECURITY_TOKEN; unset AWS_ROLE_ARN;'
 alias googenv='env | grep GOOGLE'
