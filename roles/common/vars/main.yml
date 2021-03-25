@@ -4,6 +4,7 @@ gem_packages:
 
 pip_packages:
   - { name: 'boto' }
+  - { name: 'boto3' }
   - { name: 'jmespath' }
   - { name: 'PyYAML' }
   - { name: 'docopts' }
