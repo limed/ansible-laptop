@@ -23,10 +23,8 @@ homebrew_packages:
   - { name: 'ansible' }
   - { name: 'dos2unix' }
   - { name: 'watch' }
-  #- { name: 'swaks' }
   - { name: 'ipcalc' }
   - { name: 'packer' }
-  #- { name: 'mtr' }
   - { name: 'sqlite' }
   - { name: 'urlview' }
   - { name: 'ssh-copy-id' }
@@ -40,12 +38,11 @@ homebrew_packages:
   #- { name: 'unicreds' }
   - { name: 'httpie' }
   - { name: 'ghi' }
-  #- { name: 'rkhunter' }
   - { name: 'qrencode' }
   - { name: 'oath-toolkit' }
   #- { name: 'jp' }
   - { name: 'zbar' }
-  #- { name: 'streamlink' }
+  - { name: 'streamlink' }
   - { name: 'kubernetes-cli' }
   - { name: 'kubernetes-helm' }
   - { name: 'kustomize' }
@@ -60,6 +57,7 @@ homebrew_packages:
   - { name: 'aws-iam-authenticator' }
   - { name: 'gpg2' }
   - { name: 'gimme-aws-creds' }
+  - { name: 'sops' }
 
 homebrew_cask_packages:
   - { name: 'aws-vault' }

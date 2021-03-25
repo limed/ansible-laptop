@@ -8,6 +8,7 @@
   with_items:
     - autoload
     - bundle
+    - indent
 
 - name: 'Install pathogen'
   get_url:
@@ -20,6 +21,12 @@
     src: 'vimrc'
     dest: "{{ lookup('env', 'HOME') }}/.vimrc"
     owner: "{{ lookup('env', 'USER') }}"
+    mode: '0644'
+
+- name: 'Install groovy syntax file'
+  get_url:
+    url: https://raw.githubusercontent.com/vim/vim/master/runtime/syntax/groovy.vim
+    dest: "{{ lookup('env', 'HOME') }}/.vim/indent/groovy.vim"
     mode: '0644'
 
 - name: 'Install vim-go syntax file'
