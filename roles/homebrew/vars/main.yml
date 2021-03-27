@@ -28,13 +28,14 @@ homebrew_packages:
   - { name: 'sqlite' }
   - { name: 'urlview' }
   - { name: 'ssh-copy-id' }
-  #- { name: 'go' }
+  - { name: 'go' }
+  - { name: 'gopls' }
   - { name: 'wget' }
   - { name: 'livestreamer' }
   - { name: 'shellcheck' }
   #- { name: 'offlineimap' }
   #- { name: 'mutt' }
-  #- { name: 'sshuttle' }
+  - { name: 'sshuttle' }
   #- { name: 'unicreds' }
   - { name: 'httpie' }
   - { name: 'ghi' }
@@ -58,6 +59,7 @@ homebrew_packages:
   - { name: 'gpg2' }
   - { name: 'gimme-aws-creds' }
   - { name: 'sops' }
+  - { name: 'vim' }
 
 homebrew_cask_packages:
   - { name: 'aws-vault' }
