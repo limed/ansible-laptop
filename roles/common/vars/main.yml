@@ -13,3 +13,4 @@ pip_packages:
   - { name: 'Jinja2' }
   - { name: 'j2cli' }
   - { name: 'keyring' }
+  - { name: 'detect-secrets' }

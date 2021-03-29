@@ -60,6 +60,7 @@ homebrew_packages:
   - { name: 'gimme-aws-creds' }
   - { name: 'sops' }
   - { name: 'vim' }
+  - { name: 'checkov' }
 
 homebrew_cask_packages:
   - { name: 'aws-vault' }
