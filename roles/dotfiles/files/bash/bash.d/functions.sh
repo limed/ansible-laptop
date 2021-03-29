@@ -1,3 +1,5 @@
+#!/bin/bash
+
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NOCOLOR='\033[0m'
@@ -43,10 +45,10 @@ function load_ldif() {
 
 function load_ldif_dev() {
     local ldif_file=$1
-    read -p "You are about to load ${ldif_file} to ldapmaster1.dev.db.scl3.mozilla.com, are you sure? [y/n]: " answer
+    read -r -p "You are about to load ${ldif_file} to ldapmaster1.dev.db.scl3.mozilla.com, are you sure? [y/n]: " answer
     if [[ $answer == 'y' ]]; then
         echo "Loading ldif file: ${ldif_file}"
-        ldapmodify -x -D "mail=elim_la@mozilla.com,o=com,dc=mozilla" -w "$(get_ldap_password mozilla_la.asc)" -h ldapmaster1.dev.db.scl3.mozilla.com -f $1
+        ldapmodify -x -D "mail=elim_la@mozilla.com,o=com,dc=mozilla" -w "$(get_ldap_password mozilla_la.asc)" -h ldapmaster1.dev.db.scl3.mozilla.com -f "$1"
         return 0
     elif [[ $answer == 'n' ]]; then
         echo "Not doing anything, exiting"
@@ -146,11 +148,22 @@ function ssh-ssm() {
 function gen-ssh-key() {
     local keyname=$1
     local filename="id_ed25519-${keyname}"
-    if [ -z "${keyname}" ]; then echo "Usage: $FUNCNAME <keyname>"; return 1; fi
+    if [ -z "${keyname}" ]; then echo "Usage: ${FUNCNAME[0]} <keyname>"; return 1; fi
 
     if [ -f "${HOME}/.ssh/${filename}" ]; then
-        echo "[$FUNCNAME]: Key already exists"
+        echo "[${FUNCNAME[0]}]: Key already exists"
         return 1
     fi
     ssh-keygen -o -a 100 -t ed25519 -f "${HOME}/.ssh/${filename}" -C "${keyname}"
+}
+
+function gimme-creds() {
+    local profile=$1
+    if [ -z "${profile}" ]; then echo "Usage: ${FUNCNAME[0]} <profile name>"; return 1; fi
+
+    if ! command -v gimme-aws-creds &> /dev/null; then
+        echo "gimme-aws-creds not installed"
+        return 1
+    fi
+    eval "$(gimme-aws-creds -p "${profile}" -o export)"
 }

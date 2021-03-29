@@ -2,8 +2,9 @@
 # source file in that directory instead
 
 if [[ -d "${HOME}/.bash.d" ]]; then
-    for rc in ${HOME}/.bash.d/*.sh; do
-        source $rc;
+    for rc in "${HOME}"/.bash.d/*.sh; do
+        #shellcheck source=/dev/null
+        source "$rc";
     done
     unset rc
 fi
