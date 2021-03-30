@@ -1,7 +1,10 @@
+#!/bin/bash
+
 # bash autocomplete
 
 # aws cli bash autocomplete
 complete -C aws_completer aws
+complete -F __start_kubectl k
 
 # gcloud cli autocomplete
 if [ -d "/usr/local/Caskroom/google-cloud-sdk" ]; then
