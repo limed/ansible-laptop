@@ -36,7 +36,6 @@ homebrew_packages:
   #- { name: 'offlineimap' }
   #- { name: 'mutt' }
   - { name: 'sshuttle' }
-  #- { name: 'unicreds' }
   - { name: 'httpie' }
   - { name: 'ghi' }
   - { name: 'qrencode' }
@@ -61,6 +60,8 @@ homebrew_packages:
   - { name: 'sops' }
   - { name: 'vim' }
   - { name: 'checkov' }
+  - { name: 'lab' }
+  - { name: 'glab' }
 
 homebrew_cask_packages:
   - { name: 'aws-vault' }
