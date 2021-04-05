@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
     eval "$(dircolors -b)"
@@ -21,7 +23,7 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias mplayer='mplayer -nojoystick -nolirc '
 alias ncmpc='ncmpc --colors'
-alias git='hub'
+alias git='lab'
 alias awsenv='env | grep AWS'
 alias awsexpire="date -d @${AWS_SESSION_EXPIRATION}"
 alias kubeenv='env | grep KUBECONFIG'
