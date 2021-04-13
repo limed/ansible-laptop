@@ -120,7 +120,7 @@ function goog() {
 
 function kube-export(){
     local account_name=$1
-    if [ -z "${account_name}" ]; then "Usage: $FUNCNAME [account name]"; return 1; fi
+    if [ -z "${account_name}" ]; then "Usage: ${FUNCNAME[0]} [account name]"; return 1; fi
 
     if [ "${account_name}" == "ls" ]; then
         echo -e "${GREEN}Listing k8s configs${NOCOLOR}"
@@ -133,7 +133,7 @@ function kube-export(){
 
 function ssh-ssm() {
     local private_dns=$1
-    if [ -z "${private_dns}" ]; then echo "Usage $FUNCNAME <ec2 private dns>"; return 1; fi
+    if [ -z "${private_dns}" ]; then echo "Usage ${FUNCNAME[0]} <ec2 private dns>"; return 1; fi
 
     instance_id=$(aws ec2 describe-instances --filters "Name=private-dns-name, Values=${private_dns}" --query "Reservations[*].Instances[*].InstanceId" --output text)
 
@@ -162,8 +162,14 @@ function gimme-creds() {
     if [ -z "${profile}" ]; then echo "Usage: ${FUNCNAME[0]} <profile name>"; return 1; fi
 
     if ! command -v gimme-aws-creds &> /dev/null; then
-        echo "gimme-aws-creds not installed"
+        echo "${RED}gimme-aws-creds not installed${NOCOLOR}"
         return 1
+    fi
+
+    if [ "${profile}" == "ls" ]; then
+        echo -e "${GREEN}Listing okta profiles${NOCOLOR}"
+        < .okta_aws_login_config grep "\[" | sed -e "s#\[##g" | sed -e "s#\]##g" | grep -v DEFAULT
+        return 0
     fi
     eval "$(gimme-aws-creds -p "${profile}" -o export)"
 }

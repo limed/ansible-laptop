@@ -6,6 +6,7 @@ homebrew_taps:
   - 'homebrew/cask-fonts'
   - 'weaveworks/tap'
   - 'aws/tap'
+  - 'lucagrulla/tap'
 
 homebrew_packages:
   - { name: 'coreutils' }
@@ -62,6 +63,7 @@ homebrew_packages:
   - { name: 'checkov' }
   - { name: 'lab' }
   - { name: 'glab' }
+  - { name: 'cw' }
 
 homebrew_cask_packages:
   - { name: 'aws-vault' }
