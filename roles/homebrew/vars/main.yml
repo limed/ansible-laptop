@@ -64,6 +64,7 @@ homebrew_packages:
   - { name: 'lab' }
   - { name: 'glab' }
   - { name: 'cw' }
+  - { name: 'packer' }
 
 homebrew_cask_packages:
   - { name: 'aws-vault' }
