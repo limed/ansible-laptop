@@ -95,6 +95,7 @@ autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType terraform setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType dockerfile set noexpandtab
 autocmd Filetype Jenkinsfile set ts=2 sts=2 sw=2 expandtab
+autocmd BufNewFile,BufRead *.groovy set ts=2 sts=2 sw=2 expandtab
 autocmd BufNewFile,BufRead *.py setlocal ts=4 sts=4 sw=4 expandtab
 autocmd BufNewFile,BufRead *.rss setfiletype xml
 autocmd BufNewFile,BufRead *.vim setlocal noet ts=4 sw=4 sts=4
@@ -102,6 +103,7 @@ autocmd BufNewFile,BufRead *.txt setlocal noet ts=4 sw=4
 autocmd BufNewFile,BufRead *.md setlocal spell noet ts=4 sw=4
 autocmd BufNewFile,BufRead *.yml,*.yaml setlocal sts=2 ts=2 sw=2 expandtab
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+autocmd BufNewFile,BufRead *.hcl setlocal ts=2 sts=2 sw=2 expandtab ft=hcl
 
 " Bundle / autoload specific options
 let g:go_version_warning = 0
@@ -120,5 +122,11 @@ let g:python_highlight_all = 1
 " auto strip whitespace except for file with extention blacklisted
 let blacklist = ['diff', 'gitcommit', 'unite', 'qf', 'help', 'markdown']
 autocmd BufWritePre * if index(blacklist, &ft) < 0 | StripWhitespace
+
+" vim-easy-align
+au FileType markdown vmap <tab> :EasyAlign*<Bar><Enter>
+
+" spell check for git commits
+autocmd FileType gitcommit setlocal spell
 
 " vim:ts=2:sw=2:et

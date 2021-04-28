@@ -82,3 +82,13 @@
   git:
     repo: "https://github.com/ntpeters/vim-better-whitespace.git"
     dest: "{{ lookup('env', 'HOME') }}/.vim/bundle/vim-better-whitespace"
+
+- name: 'Install vim-hcl'
+  git:
+    repo: "https://github.com/jvirtanen/vim-hcl.git"
+    dest: "{{ lookup('env', 'HOME') }}/.vim/bundle/vim-hcl"
+
+- name: 'Install vim-easy-align'
+  git:
+    repo: "https://github.com/junegunn/vim-easy-align.git"
+    dest: "{{ lookup('env', 'HOME') }}/.vim/bundle/vim-easy-align"
