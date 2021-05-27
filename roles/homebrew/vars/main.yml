@@ -65,6 +65,8 @@ homebrew_packages:
   - { name: 'glab' }
   - { name: 'cw' }
   - { name: 'packer' }
+  - { name: 'tflint' }
+  - { name: 'terraform-docs' }
 
 homebrew_cask_packages:
   - { name: 'aws-vault' }
