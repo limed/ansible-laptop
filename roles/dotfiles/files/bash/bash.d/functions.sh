@@ -168,8 +168,17 @@ function gimme-creds() {
 
     if [ "${profile}" == "ls" ]; then
         echo -e "${GREEN}Listing okta profiles${NOCOLOR}"
-        < .okta_aws_login_config grep "\[" | sed -e "s#\[##g" | sed -e "s#\]##g" | grep -v DEFAULT
+        < ~/.okta_aws_login_config grep "\[" | sed -e "s#\[##g" | sed -e "s#\]##g" | grep -v DEFAULT
         return 0
     fi
     eval "$(gimme-aws-creds -p "${profile}" -o export)"
+}
+
+function epoch-convert() {
+    local unix_time="${1}"
+    if [ -z "${unix_time}" ]; then echo "Usage: ${FUNCNAME[0]} <unix epoch>"; return 1; fi
+
+    utc=$(date -d@"${unix_time}" --utc)
+    echo "${utc}"
+
 }
