@@ -20,11 +20,11 @@ function get_ldap_password_gpg() {
 }
 
 function ldap_query_admin() {
-    ldapsearch -LLL -o ldif-wrap=no -x -D "mail=elim_la@mozilla.com,o=com,dc=mozilla" -w "$(get_ldap_password mozilla_la.asc)" -h 127.0.0.1 -p 9090 -b dc=mozilla $1 $2
+    ldapsearch -LLL -o ldif-wrap=no -x -D "mail=elim_la@mozilla.com,o=com,dc=mozilla" -w "$(get_ldap_password mozilla_la.asc)" -h 127.0.0.1 -p 9090 -b dc=mozilla "${1}" "${2}"
 }
 
 function ldap_query() {
-    ldapsearch -LLL -o ldif-wrap=no -x -D "mail=elim@mozilla.com,o=com,dc=mozilla" -w "$(get_ldap_password_gpg)" -h 127.0.0.1 -p 9090 -b dc=mozilla $1 $2
+    ldapsearch -LLL -o ldif-wrap=no -x -D "mail=elim@mozilla.com,o=com,dc=mozilla" -w "$(get_ldap_password_gpg)" -h 127.0.0.1 -p 9090 -b dc=mozilla "${1}" "${2}"
 }
 
 function load_ldif() {
@@ -132,17 +132,23 @@ function kube-export(){
 }
 
 function ssh-ssm() {
-    local private_dns=$1
-    if [ -z "${private_dns}" ]; then echo "Usage ${FUNCNAME[0]} <ec2 private dns>"; return 1; fi
+    local arg=$1
+    local region=$2
+    if [ -z "${arg}" ]; then echo "Usage ${FUNCNAME[0]} <ec2 private dns|ec2 instance id>"; return 1; fi
 
-    instance_id=$(aws ec2 describe-instances --filters "Name=private-dns-name, Values=${private_dns}" --query "Reservations[*].Instances[*].InstanceId" --output text)
-
-    if [ -z "${instance_id}" ]; then
+    region=${region:-us-west-2}
+    if [[ ${arg} =~ ^i-.*$ ]]; then
+        echo "Instance id ${arg}"
+        instance_id="${arg}"
+    elif [[ ${arg} =~ ^ip-.*.compute.internal$ ]]; then
+        echo "Internal DNS ${arg}"
+        instance_id=$(aws ec2 describe-instances --filters "Name=private-dns-name, Values=${arg}" --query "Reservations[*].Instances[*].InstanceId" --output text --region "${region}")
+    else
         echo "Unable to find instance ID"
         return 1
     fi
 
-    aws ssm start-session --target "${instance_id}"
+    aws ssm start-session --target "${instance_id}" --region "${region}"
 }
 
 function gen-ssh-key() {
